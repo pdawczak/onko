@@ -1,0 +1,41 @@
+Uzywka:
+
+  aktywne_palenie_badanie_01:
+    Badanie:            badanie_01
+    typ:                ap
+  
+  alkohol_badanie_01:
+    Badanie:            badanie_01
+    typ:                aa
+  
+  aktywne_palenie_badanie_02:
+    Badanie:            badanie_02
+    typ:                ap
+  
+  alkohol_badanie_02:
+    Badanie:            badanie_02
+    typ:                aa
+    
+  bierne_palenie_badanie_03:
+    Badanie:            badanie_03
+    typ:                bp
+  
+  alkohol_badanie_03:
+    Badanie:            badanie_03
+    typ:                aa
+    
+  bierne_palenie_badanie_04:
+    Badanie:            badanie_04
+    typ:                bp
+    
+  alkohol_badanie_04:
+    Badanie:            badanie_04
+    typ:                aa
+    
+  nie_pali_badanie_05:
+    Badanie:            badanie_05
+    typ:                np
+    
+  alkohol_badanie_05:
+    Badanie:            badanie_05
+    typ:                aa

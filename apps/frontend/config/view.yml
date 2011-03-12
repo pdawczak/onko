@@ -1,0 +1,27 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    #title:        symfony project
+    #description:  symfony project
+    #keywords:     symfony, project
+    #language:     en
+    #robots:       index, follow
+
+  stylesheets:
+    - main.css
+    - ../js/ext-3.3.0/resources/css/ext-all.css
+    - icons.css
+
+  javascripts:
+    - ext-3.3.0/adapter/ext/ext-base-debug.js
+    - ext-3.3.0/ext-all-debug.js
+    - ext-3.3.0/ext-lang-pl.js
+    - my_windows.js
+
+  has_layout:     true
+  layout:         layout

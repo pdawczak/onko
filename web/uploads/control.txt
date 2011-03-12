@@ -1,0 +1,111 @@
+########################################
+## BEGIN: /home/lukaszb/MP/1 wzgorze/
+########################################
+ $LCMODL
+ title= 'glowa-ZFM (2010.08.11 08:31:35) Sarlinska Agnieszka (1989.11.04) 5.8mL, TE/TR/NS=31/2000/128 (SV_wzgorze_TE 31)'
+ srcraw= '/home/mary/widma_aga/11-08-2010/Sarliska_Agnieszka/Sarlinska_Agnieszka_SV_wzgorze_TE_31_9_1_raw_act.SDAT'
+ srch2o= '/home/mary/widma_aga/11-08-2010/Sarliska_Agnieszka/Sarlinska_Agnieszka_SV_wzgorze_TE_31_9_1_raw_ref.SDAT'
+ sddegz= 3.
+ sddegp= 1.
+ savdir= '/home/mary/wyniki/single/1/'
+ ppmst= 4.0
+ ppmend= 0.2
+ nunfil= 1024
+ ltable= 7
+ lps= 8
+ lprint= 6
+ lcsv= 11
+ lcoraw= 10
+ lcoord= 9
+ hzpppm= 1.2780e+02
+ filtab= '/home/mary/.lcmodel/temp/22d-10h-07m-28s-1957pid/table'
+ filraw= '/home/mary/.lcmodel/temp/22d-10h-07m-28s-1957pid/met/RAW'
+ filps= '/home/mary/.lcmodel/temp/22d-10h-07m-28s-1957pid/ps'
+ filpri= '/home/mary/.lcmodel/temp/22d-10h-07m-28s-1957pid/print'
+ filh2o= '/home/mary/.lcmodel/temp/22d-10h-07m-28s-1957pid/h2o/RAW'
+ filcsv= '/home/mary/.lcmodel/temp/22d-10h-07m-28s-1957pid/spreadsheet.csv'
+ filcor= '/home/mary/.lcmodel/temp/22d-10h-07m-28s-1957pid/coraw'
+ filcoo= '/home/mary/.lcmodel/temp/22d-10h-07m-28s-1957pid/coord'
+ filbas= '/home/mary/.lcmodel/basis-sets/3T/philips-press_te30_3t_01a.basis'
+ echot= 31.00
+ dows= T
+ deltat= 5.000e-04
+ $END
+########################################
+## END: /home/lukaszb/MP/1 wzgorze/
+########################################
+
+########################################
+## BEGIN: /home/lukaszb/MP/2 szara pot/
+########################################
+ $LCMODL
+ title= 'glowa-ZFM (2010.08.11 08:31:35) Sarlinska Agnieszka (1989.11.04) 8.0mL, TE/TR/NS=31/2000/64 (SV_szara pot_TE 31)'
+ srcraw= '/home/mary/widma_aga/11-08-2010/Sarliska_Agnieszka/Sarlinska_Agnieszka_SV_szara_pot_TE_31_15_1_raw_act.SDAT'
+ srch2o= '/home/mary/widma_aga/11-08-2010/Sarliska_Agnieszka/Sarlinska_Agnieszka_SV_szara_pot_TE_31_15_1_raw_ref.SDAT'
+ sddegz= 3.
+ sddegp= 1.
+ savdir= '/home/mary/wyniki/single/2/'
+ ppmst= 4.0
+ ppmend= 0.2
+ nunfil= 1024
+ ltable= 7
+ lps= 8
+ lprint= 6
+ lcsv= 11
+ lcoraw= 10
+ lcoord= 9
+ hzpppm= 1.2780e+02
+ filtab= '/home/mary/.lcmodel/temp/22d-10h-07m-51s-1957pid/table'
+ filraw= '/home/mary/.lcmodel/temp/22d-10h-07m-51s-1957pid/met/RAW'
+ filps= '/home/mary/.lcmodel/temp/22d-10h-07m-51s-1957pid/ps'
+ filpri= '/home/mary/.lcmodel/temp/22d-10h-07m-51s-1957pid/print'
+ filh2o= '/home/mary/.lcmodel/temp/22d-10h-07m-51s-1957pid/h2o/RAW'
+ filcsv= '/home/mary/.lcmodel/temp/22d-10h-07m-51s-1957pid/spreadsheet.csv'
+ filcor= '/home/mary/.lcmodel/temp/22d-10h-07m-51s-1957pid/coraw'
+ filcoo= '/home/mary/.lcmodel/temp/22d-10h-07m-51s-1957pid/coord'
+ filbas= '/home/mary/.lcmodel/basis-sets/3T/philips-press_te30_3t_01a.basis'
+ echot= 31.00
+ dows= T
+ deltat= 5.000e-04
+ $END
+########################################
+## END: /home/lukaszb/MP/2 szara pot/
+########################################
+
+########################################
+## BEGIN: /home/lukaszb/MP/3 szara cz/
+########################################
+ $LCMODL
+ title= 'glowa-ZFM (2010.08.11 08:31:35) Sarlinska Agnieszka (1989.11.04) 8.0mL, TE/TR/NS=29/2000/64 (SV_szara cz_TE 31)'
+ srcraw= '/home/mary/widma_aga/11-08-2010/Sarliska_Agnieszka/Sarlinska_Agnieszka_SV_szara_cz_TE_31_14_1_raw_act.SDAT'
+ srch2o= '/home/mary/widma_aga/11-08-2010/Sarliska_Agnieszka/Sarlinska_Agnieszka_SV_szara_cz_TE_31_14_1_raw_ref.SDAT'
+ sddegz= 3.
+ sddegp= 1.
+ savdir= '/home/mary/wyniki/single/3/'
+ ppmst= 4.0
+ ppmend= 0.2
+ nunfil= 1024
+ ltable= 7
+ lps= 8
+ lprint= 6
+ lcsv= 11
+ lcoraw= 10
+ lcoord= 9
+ hzpppm= 1.2780e+02
+ filtab= '/home/mary/.lcmodel/temp/22d-10h-08m-16s-1957pid/table'
+ filraw= '/home/mary/.lcmodel/temp/22d-10h-08m-16s-1957pid/met/RAW'
+ filps= '/home/mary/.lcmodel/temp/22d-10h-08m-16s-1957pid/ps'
+ filpri= '/home/mary/.lcmodel/temp/22d-10h-08m-16s-1957pid/print'
+ filh2o= '/home/mary/.lcmodel/temp/22d-10h-08m-16s-1957pid/h2o/RAW'
+ filcsv= '/home/mary/.lcmodel/temp/22d-10h-08m-16s-1957pid/spreadsheet.csv'
+ filcor= '/home/mary/.lcmodel/temp/22d-10h-08m-16s-1957pid/coraw'
+ filcoo= '/home/mary/.lcmodel/temp/22d-10h-08m-16s-1957pid/coord'
+ filbas= '/home/mary/.lcmodel/basis-sets/3T/philips-press_te30_3t_01a.basis'
+ echot= 29.00
+ dows= T
+ deltat= 5.000e-04
+ $END
+########################################
+## END: /home/lukaszb/MP/3 szara cz/
+########################################
+

@@ -1,0 +1,69 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+###############################################################          BADANIA
+badanie_new:
+  url:        /dodaj-badanie/:id
+  class:      sfDoctrineRoute
+  param:      { module: badanie, action: new }
+  options:    { model: Pacjent, type: object }
+
+badania_pacjent:
+  url:        /:id/badania_pacjenta.json
+  class:      sfDoctrineRoute
+  param:      { module: badanie, action: badaniaPacjent }
+  options:    { model: Pacjent, type: object }
+
+badanie_szczegoly:
+  url:        /badanie/:id/:pacjent_id
+  class:      sfDoctrineRoute
+  param:      { module: badanie, action: show }
+  options:    { model: Badanie, type: object }
+
+badanie_submit:
+  url:        /badanie/:id/submit
+  class:      sfDoctrineRoute
+  param:      { module: badanie, action: submit }
+  options:    { model: Pacjent, type: object }
+  requirements:
+    sf_method: [post]
+###############################################################         /BADANIA
+###############################################################         PACJENCI
+pacjent_submit:
+  url:        /pacjent-submit
+  param:      { module: pacjent, action: submit }
+
+pacjent_search:
+  url:        /pacjenci_search.json
+  param:      { module: pacjent, action: search }
+
+pacjenci:
+  url:        /pacjenci.json
+  param:      { module: pacjent, action: fetch }
+
+pacjent:
+  url:        /pacjent
+  class:      sfDoctrineRouteCollection
+  options:    { model: Pacjent }
+
+pacjent_export:
+  url:        /:id/pacjent.:sf_format
+  class:      sfDoctrineRoute
+  param:      { module: pacjent, action: export }
+  options:    { model: Pacjent, type: object }
+  requirements:
+    sf_format:  (?:txt|csv)
+###############################################################        /PACJENCI
+# default rules
+homepage:
+  url:   /
+  param: { module: pacjent, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

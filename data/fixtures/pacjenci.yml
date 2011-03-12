@@ -1,0 +1,81 @@
+Pacjent:
+
+  janek:
+    imie:           Janek
+    nazwisko:       Nowak
+    pesel:          12367829123
+    data_urodzenia: '1986-10-13'
+    plec:           m
+    wzrost:         158
+    waga:           60
+    reka:           p
+    
+  ania:
+    imie:           Ania
+    nazwisko:       Nowak
+    pesel:          13467829123
+    data_urodzenia: '1988-03-01'
+    plec:           k
+    wzrost:         156
+    waga:           78
+    reka:           l
+    
+  barbara:
+    imie:           Barbara
+    nazwisko:       Bąbel
+    pesel:          73867829123
+    data_urodzenia: '1978-01-29'
+    plec:           k
+    wzrost:         149
+    waga:           46
+    reka:           p
+    
+  katarzyna:
+    imie:           Katarzyna
+    nazwisko:       Miś
+    pesel:          93767829123
+    data_urodzenia: '1969-11-06'
+    plec:           k
+    wzrost:         158
+    waga:           69
+    reka:           p
+
+  stefan:
+    imie:           Stefan
+    nazwisko:       Mydełko
+    pesel:          '09876543211'
+    data_urodzenia: '1968-12-13'
+    plec:           m
+    wzrost:         169
+    waga:           78.5
+    reka:           l
+
+  janek_01:
+    imie:           Janek
+    nazwisko:       Nowicki
+    pesel:          '26374816539'
+    data_urodzenia: '1973-05-26'
+    plec:           m
+    wzrost:         176
+    waga:           80
+    reka:           o
+
+  andrzej:
+    imie:           Andrzej
+    nazwisko:       Kowalik
+    pesel:          '02938475618'
+    data_urodzenia: '1979-09-03'
+    plec:           m
+    wzrost:         180
+    waga:           69.9
+    reka:           p
+
+  anna:
+    imie:           Anna
+    nazwisko:       Mydełko
+    pesel:          '12309845674'
+    data_urodzenia: '1986-09-22'
+    plec:           k
+    wzrost:         153
+    waga:           58.8
+    reka:           p

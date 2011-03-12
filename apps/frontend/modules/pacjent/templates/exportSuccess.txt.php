@@ -1,0 +1,1 @@
+<?php include_partial('pacjent/details', array('pacjent' => $pacjent)) ?>

@@ -1,0 +1,41 @@
+TypCechy:
+  
+  ilosc_sztuk_na_dzien:
+    nazwa:            Ilość sztuk na dzień
+    typ:              decimal
+    
+  okres_palenia:
+    nazwa:            Okres palenia
+    typ:              decimal
+    
+  ostatni_papieros:
+    nazwa:            Ostatni papieros
+    typ:              decimal
+    
+  miejsce_narazenia:
+    nazwa:            Miejsce narażenia
+    typ:              string
+    
+  czas_ekspozycji:
+    nazwa:            Czas ekspozycji
+    typ:              decimal
+  
+  przed_badaniem:
+    nazwa:            Przed badaniem
+    typ:              bool
+    
+  jednostek_na_tydzien:
+    nazwa:            Jednostek na tydzień
+    typ:              decimal
+    
+  data_zaprzestania:
+    nazwa:            Data zaprzestania
+    typ:              date
+
+  rodzaj:
+    nazwa:            Rodzaj
+    typ:              string
+
+  czestosc_zazywania:
+    nazwa:            Częstość zażywania
+    typ:              string

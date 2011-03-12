@@ -1,0 +1,21 @@
+WynikBadania:
+
+  wynik_01:
+    Badanie:            badanie_01
+    ocena_stanu_guza:   bcg
+
+  wynik_02:
+    Badanie:            badanie_02
+    ocena_stanu_guza:   pr
+
+  wynik_03:
+    Badanie:            badanie_03
+    ocena_stanu_guza:   stg
+
+  wynik_04:
+    Badanie:            badanie_04
+    ocena_stanu_guza:   wz
+
+  wynik_05:
+    Badanie:            badanie_05
+    ocena_stanu_guza:   pr

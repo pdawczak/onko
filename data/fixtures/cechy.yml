@@ -1,0 +1,147 @@
+Cecha:
+
+  cecha_01:
+    Uzywka:             aktywne_palenie_badanie_01
+    TypCechy:           ilosc_sztuk_na_dzien
+    wartosc:            10
+    
+  cecha_02:
+    Uzywka:             aktywne_palenie_badanie_01
+    TypCechy:           okres_palenia
+    wartosc:            2
+    
+  cecha_03:
+    Uzywka:             aktywne_palenie_badanie_01
+    TypCechy:           ostatni_papieros
+    wartosc:            15
+    
+  cecha_04:
+    Uzywka:             alkohol_badanie_01
+    TypCechy:           przed_badaniem
+    wartosc:            0
+        
+  cecha_05:
+    Uzywka:             alkohol_badanie_01
+    TypCechy:           jednostek_na_tydzien
+    wartosc:            7
+        
+  cecha_06:
+    Uzywka:             alkohol_badanie_01
+    TypCechy:           data_zaprzestania
+    wartosc:            '2010-01-02'
+    
+    
+    
+    
+  cecha_07:
+    Uzywka:             aktywne_palenie_badanie_02
+    TypCechy:           ilosc_sztuk_na_dzien
+    wartosc:            12
+    
+  cecha_08:
+    Uzywka:             aktywne_palenie_badanie_02
+    TypCechy:           okres_palenia
+    wartosc:            2
+    
+  cecha_09:
+    Uzywka:             aktywne_palenie_badanie_02
+    TypCechy:           ostatni_papieros
+    wartosc:            5
+    
+  cecha_10:
+    Uzywka:             alkohol_badanie_02
+    TypCechy:           przed_badaniem
+    wartosc:            1
+        
+  cecha_11:
+    Uzywka:             alkohol_badanie_02
+    TypCechy:           jednostek_na_tydzien
+    wartosc:            3
+        
+  cecha_12:
+    Uzywka:             alkohol_badanie_02
+    TypCechy:           data_zaprzestania
+    wartosc:            '2010-01-13'    
+    
+    
+    
+  cecha_13:
+    Uzywka:             bierne_palenie_badanie_03
+    TypCechy:           miejsce_narazenia
+    wartosc:            pub
+    
+  cecha_14:
+    Uzywka:             bierne_palenie_badanie_03
+    TypCechy:           czas_ekspozycji
+    wartosc:            2
+    
+  cecha_15:
+    Uzywka:             bierne_palenie_badanie_03
+    TypCechy:           przed_badaniem
+    wartosc:            1
+    
+  cecha_16:
+    Uzywka:             alkohol_badanie_03
+    TypCechy:           przed_badaniem
+    wartosc:            1
+        
+  cecha_17:
+    Uzywka:             alkohol_badanie_03
+    TypCechy:           jednostek_na_tydzien
+    wartosc:            1
+        
+  cecha_18:
+    Uzywka:             alkohol_badanie_03
+    TypCechy:           data_zaprzestania
+    wartosc:            '2010-02-09'    
+    
+    
+    
+  cecha_19:
+    Uzywka:             bierne_palenie_badanie_04
+    TypCechy:           miejsce_narazenia
+    wartosc:            "praca, pub"
+    
+  cecha_20:
+    Uzywka:             bierne_palenie_badanie_04
+    TypCechy:           czas_ekspozycji
+    wartosc:            9
+    
+  cecha_21:
+    Uzywka:             bierne_palenie_badanie_04
+    TypCechy:           przed_badaniem
+    wartosc:            0
+    
+  cecha_22:
+    Uzywka:             alkohol_badanie_04
+    TypCechy:           przed_badaniem
+    wartosc:            0
+        
+  cecha_23:
+    Uzywka:             alkohol_badanie_04
+    TypCechy:           jednostek_na_tydzien
+    wartosc:            3
+        
+  cecha_24:
+    Uzywka:             alkohol_badanie_04
+    TypCechy:           data_zaprzestania
+    wartosc:            '2010-04-02'    
+    
+    
+  
+  
+  cecha_28:
+    Uzywka:             alkohol_badanie_01
+    TypCechy:           przed_badaniem
+    wartosc:            1
+        
+  cecha_29:
+    Uzywka:             alkohol_badanie_01
+    TypCechy:           jednostek_na_tydzien
+    wartosc:            3
+        
+  cecha_30:
+    Uzywka:             alkohol_badanie_01
+    TypCechy:           data_zaprzestania
+    wartosc:            '2010-06-10'    
+

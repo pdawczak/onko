@@ -1,0 +1,22 @@
+Badanie:
+
+  badanie_01:
+    Pacjent:          janek
+    data_badania:     '2010-01-03'
+  
+  badanie_02:
+    Pacjent:          janek
+    data_badania:     '2010-01-13'
+    
+  badanie_03:
+    Pacjent:          janek
+    data_badania:     '2010-02-10'
+    
+  badanie_04:
+    Pacjent:          barbara
+    data_badania:     '2010-04-05'
+    menstruacja:      true
+    
+  badanie_05:
+    Pacjent:          barbara
+    data_badania:     '2010-06-10'

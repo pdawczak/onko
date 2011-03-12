@@ -1,0 +1,88 @@
+Pacjent:
+  actAs:
+    Timestampable:    ~
+  columns:
+    imie:             { type: string(20), notnull: true }
+    nazwisko:         { type: string(50), notnull: true }
+    pesel:            { type: string(11), notnull: true, unique: true }
+    data_urodzenia:   { type: date, notnull: true }
+    plec:             { type: enum, values: [m, k] }
+    wzrost:           { type: smallint, notnull: true }
+    waga:             { type: decimal(5), scale: 2, notnull: true }
+    reka:             { type: enum, values: [p, l, o] }
+
+Badanie:
+  columns:
+    pacjent_id:       { type: integer(8) }
+    data_badania:     { type: date, notnull: true }
+    inne:             { type: string(255) }
+    menstruacja:      { type: boolean, default: false }
+  relations:
+    Pacjent:
+      local:          pacjent_id
+      onDelete:       CASCADE
+      foreignAlias:   Badania
+
+Uzywka:
+  columns:
+    badanie_id:       { type: integer(8) }
+    typ:              { type: enum, values: [ap, bp, np, aa, iu] } # ap-aktywne palenie, bp-bierne palenie, np-nie palacy, ap-aktywnie pijacy, iu - inne używki
+  relations:
+    Badanie:
+      local:          badanie_id
+      onDelete:       CASCADE
+      foreignAlias:   Uzywki
+
+TypCechy:
+  actAs:
+    Sluggable:
+      fields:         [nazwa]
+      length:         30
+  columns:
+    nazwa:            { type: string(30), notnull: true, unique: true }
+    typ:              { type: enum, values: [decimal, date, bool, string], notnull: true }
+
+Cecha:
+  columns:
+    uzywka_id:        { type: integer(8) }
+    typ_cechy_id:     { type: integer(8) }
+    wartosc:          { type: string(255), notnull: true }
+  relations:
+    Uzywka:
+      local:          uzywka_id
+      onDelete:       CASCADE
+      foreignAlias:   Cechy
+    TypCechy:
+      local:          typ_cechy_id
+      onDelete:       CASCADE
+
+WynikBadania:
+  columns:
+    ocena_stanu_guza: { type: enum, values: [wz, pr, stg, bcg] }
+    badanie_id:       { type: integer(8) }
+  relations:
+    Badanie:
+      local:          badanie_id
+      onDelete:       CASCADE
+      foreignType:    one
+
+Widmo:
+  columns:
+    skala_ppm:        { type: clob }
+    widmo:            { type: clob }
+    linia_bazowa:     { type: clob }
+    widmo_bazowa:     { type: clob }
+    lokalizacja:      { type: enum, values: [wz, isc, isp] } # wz - wzgórze, isc - istota szara czołowa, isp - istota szara potyliczna
+    rozmiar_voxela_x: { type: decimal(5), scale: 2, notnull: true }
+    rozmiar_voxela_y: { type: decimal(5), scale: 2, notnull: true }
+    rozmiar_voxela_z: { type: decimal(5), scale: 2, notnull: true }
+    stezenia:         { type: clob }
+    te:               { type: integer }
+    tr:               { type: integer }
+    ns:               { type: integer }
+    wynik_id:         { type: integer(8) }
+  relations:
+    WynikBadania:
+      local:          wynik_id
+      foreignAlias:   Widma
+

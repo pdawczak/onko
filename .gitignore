@@ -1,0 +1,8 @@
+cache/*
+log/*
+nbproject/
+data/sql/
+lib/*/doctrine/*/*/Base*.php
+*.swp
+*~
+.DS_Store
