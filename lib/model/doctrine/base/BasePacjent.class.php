@@ -14,6 +14,7 @@
  * @property decimal $waga
  * @property enum $reka
  * @property Doctrine_Collection $Badania
+ * @property Doctrine_Collection $Radioterapia
  * 
  * @method string              getImie()           Returns the current record's "imie" value
  * @method string              getNazwisko()       Returns the current record's "nazwisko" value
@@ -24,6 +25,7 @@
  * @method decimal             getWaga()           Returns the current record's "waga" value
  * @method enum                getReka()           Returns the current record's "reka" value
  * @method Doctrine_Collection getBadania()        Returns the current record's "Badania" collection
+ * @method Doctrine_Collection getRadioterapia()   Returns the current record's "Radioterapia" collection
  * @method Pacjent             setImie()           Sets the current record's "imie" value
  * @method Pacjent             setNazwisko()       Sets the current record's "nazwisko" value
  * @method Pacjent             setPesel()          Sets the current record's "pesel" value
@@ -33,6 +35,7 @@
  * @method Pacjent             setWaga()           Sets the current record's "waga" value
  * @method Pacjent             setReka()           Sets the current record's "reka" value
  * @method Pacjent             setBadania()        Sets the current record's "Badania" collection
+ * @method Pacjent             setRadioterapia()   Sets the current record's "Radioterapia" collection
  * 
  * @package    onko_gliwice
  * @subpackage model
@@ -97,6 +100,10 @@ abstract class BasePacjent extends sfDoctrineRecord
     {
         parent::setUp();
         $this->hasMany('Badanie as Badania', array(
+             'local' => 'id',
+             'foreign' => 'pacjent_id'));
+
+        $this->hasMany('Radioterapia', array(
              'local' => 'id',
              'foreign' => 'pacjent_id'));
 
