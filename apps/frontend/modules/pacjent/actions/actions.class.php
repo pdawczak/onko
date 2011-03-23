@@ -74,7 +74,7 @@ class pacjentActions extends sfActions
     {
       $pacjent = $form->save();
 
-      $this->redirect('pacjent/edit?id='.$pacjent->getId());
+      $this->redirect('pacjent_show', $pacjent);
     }
   }
 
@@ -128,8 +128,18 @@ class pacjentActions extends sfActions
     $this->pacjent = $this->getRoute()->getObject();
   }
 
-  public function executeDodaj_radioterapie()
+  public function executeDodaj_radioterapie(sfWebRequest $request)
   {
-    ;
+    $this->pacjent = $this->getRoute()->getObject();
+
+    $radioterapia = new Radioterapia();
+    $radioterapia->setPacjent($this->pacjent);
+
+    $this->form = new RadioterapiaForm($radioterapia);
+    
+    if ($request->getMethod() == sfRequest::POST)
+    {
+      $this->processForm($request, $this->form);
+    }
   }
 }
