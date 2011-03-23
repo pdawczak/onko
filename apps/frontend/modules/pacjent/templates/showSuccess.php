@@ -91,6 +91,14 @@ Ext.onReady(function(){
                 please_wait_window();
                 window.location = '<?php echo url_for('badanie_new', $pacjent) ?>';
               }
+            },
+            {
+              text    : 'Radioterapię',
+              iconCls : 'icon-lightbulb',
+              handler : function() {
+                please_wait_window();
+                window.location = '<?php echo url_for('pacjent_dodaj_radioterapie', $pacjent) ?>';
+              }
             }
           ]
         },
