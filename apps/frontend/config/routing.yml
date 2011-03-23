@@ -44,7 +44,10 @@ pacjenci:
 pacjent:
   url:        /pacjent
   class:      sfDoctrineRouteCollection
-  options:    { model: Pacjent }
+  options:
+    model: Pacjent
+    object_actions:
+      dodaj_radioterapie: [get]
 
 pacjent_export:
   url:        /:id/pacjent.:sf_format
