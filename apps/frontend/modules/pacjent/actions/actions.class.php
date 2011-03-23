@@ -127,4 +127,9 @@ class pacjentActions extends sfActions
   {
     $this->pacjent = $this->getRoute()->getObject();
   }
+
+  public function executeDodaj_radioterapie()
+  {
+    ;
+  }
 }
