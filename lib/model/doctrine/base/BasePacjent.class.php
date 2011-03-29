@@ -15,6 +15,7 @@
  * @property enum $reka
  * @property Doctrine_Collection $Badania
  * @property Doctrine_Collection $Radioterapia
+ * @property Doctrine_Collection $Chemioterapie
  * 
  * @method string              getImie()           Returns the current record's "imie" value
  * @method string              getNazwisko()       Returns the current record's "nazwisko" value
@@ -26,6 +27,7 @@
  * @method enum                getReka()           Returns the current record's "reka" value
  * @method Doctrine_Collection getBadania()        Returns the current record's "Badania" collection
  * @method Doctrine_Collection getRadioterapia()   Returns the current record's "Radioterapia" collection
+ * @method Doctrine_Collection getChemioterapie()  Returns the current record's "Chemioterapie" collection
  * @method Pacjent             setImie()           Sets the current record's "imie" value
  * @method Pacjent             setNazwisko()       Sets the current record's "nazwisko" value
  * @method Pacjent             setPesel()          Sets the current record's "pesel" value
@@ -36,6 +38,7 @@
  * @method Pacjent             setReka()           Sets the current record's "reka" value
  * @method Pacjent             setBadania()        Sets the current record's "Badania" collection
  * @method Pacjent             setRadioterapia()   Sets the current record's "Radioterapia" collection
+ * @method Pacjent             setChemioterapie()  Sets the current record's "Chemioterapie" collection
  * 
  * @package    onko_gliwice
  * @subpackage model
@@ -104,6 +107,10 @@ abstract class BasePacjent extends sfDoctrineRecord
              'foreign' => 'pacjent_id'));
 
         $this->hasMany('Radioterapia', array(
+             'local' => 'id',
+             'foreign' => 'pacjent_id'));
+
+        $this->hasMany('Chemioterapia as Chemioterapie', array(
              'local' => 'id',
              'foreign' => 'pacjent_id'));
 
