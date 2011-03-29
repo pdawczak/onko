@@ -74,7 +74,7 @@ class pacjentActions extends sfActions
     {
       $obj = $form->save();
 
-      if (get_class($obj) == 'Radioterapia')
+      if (get_class($obj) != 'Pacjent')
       {
         $obj = $obj->getPacjent();
       }
@@ -142,6 +142,21 @@ class pacjentActions extends sfActions
 
     $this->form = new RadioterapiaForm($radioterapia);
     
+    if ($request->getMethod() == sfRequest::POST)
+    {
+      $this->processForm($request, $this->form);
+    }
+  }
+
+  public function executeDodaj_chemioterapie(sfWebRequest $request)
+  {
+    $this->pacjent = $this->getRoute()->getObject();
+    
+    $chemioterapia = new Chemioterapia();
+    $chemioterapia->setPacjent($this->pacjent);
+
+    $this->form = new ChemioterapiaForm($chemioterapia);
+
     if ($request->getMethod() == sfRequest::POST)
     {
       $this->processForm($request, $this->form);
