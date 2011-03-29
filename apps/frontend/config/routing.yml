@@ -47,7 +47,8 @@ pacjent:
   options:
     model: Pacjent
     object_actions:
-      dodaj_radioterapie: [get, post]
+      dodaj_radioterapie:  [get, post]
+      dodaj_chemioterapie: [get, post]
 
 pacjent_export:
   url:        /:id/pacjent.:sf_format
