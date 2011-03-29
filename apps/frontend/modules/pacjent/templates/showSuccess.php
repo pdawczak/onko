@@ -195,10 +195,10 @@ Ext.onReady(function(){
                 }
               ]
             },
-//            {
-//              title     : 'Leki',
-//              html      : 'tutaj poczutasz o jego lekach...'
-//            },
+            {
+              title     : 'Radioterapie',
+              html      : '<?php echo myGetPartial('pacjent/radioterapie', array('pacjent' => $pacjent)) ?>'
+            },
 //            {
 //              title     : 'Alergie',
 //              html      : 'Łoch, a tukej bedzie o alergiach... aaaaaa psiiiik...'
