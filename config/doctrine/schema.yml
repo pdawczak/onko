@@ -101,3 +101,23 @@ Radioterapia:
     Pacjent:
       local:          pacjent_id
       onDelete:       CASCADE
+
+Lek:
+  columns:
+    nazwa_leku:       { type: string(255) }
+    rodzaj:           { type: enum, values: [a, c, i] } # a - na alergię, c - do chemioterapii, i - inne
+
+Chemioterapia:
+  columns:
+    data_rozpoczecia: { type: date }
+    data_zakonczenia: { type: date }
+    lek_id:           { type: integer(8) }
+    pacjent_id:       { type: integer(8) }
+  relations:
+    Lek:
+      local:          lek_id
+      alias:          Leki
+    Pacjent:
+      local:          pacjent_id
+      foreignAlias:   Chemioterapie
+      onDelete:       CASCADE
