@@ -70,4 +70,9 @@ class Pacjent extends BasePacjent
   {
     return sprintf('%s, %s (%s l.)', $this->nazwisko, $this->imie, $this->getWiek());
   }
+
+  public function getSortedRadioterapie()
+  {
+    return RadioterapiaTable::getInstance()->getSortedRadioterapieForPacjent($this);
+  }
 }
