@@ -72,9 +72,14 @@ class pacjentActions extends sfActions
     $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
     if ($form->isValid())
     {
-      $pacjent = $form->save();
+      $obj = $form->save();
 
-      $this->redirect('pacjent_show', $pacjent);
+      if (get_class($obj) == 'Radioterapia')
+      {
+        $obj = $obj->getPacjent();
+      }
+
+      $this->redirect('pacjent_show', $obj);
     }
   }
 
