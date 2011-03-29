@@ -7,13 +7,31 @@
  */
 class RadioterapiaTable extends Doctrine_Table
 {
-    /**
-     * Returns an instance of this class.
-     *
-     * @return object RadioterapiaTable
-     */
-    public static function getInstance()
-    {
-        return Doctrine_Core::getTable('Radioterapia');
-    }
+
+  /**
+   * Returns an instance of this class.
+   *
+   * @return RadioterapiaTable
+   */
+  public static function getInstance()
+  {
+    return Doctrine_Core::getTable('Radioterapia');
+  }
+
+  /**
+   * Fetches Radiotepias for Pacjent
+   * @param Pacjent $pacjent
+   * @return Doctrine_Collection
+   */
+  public function getSortedRadioterapieForPacjent(Pacjent $pacjent)
+  {
+    $q = $this
+      ->createQuery('r')
+      ->addWhere('r.pacjent_id = ?', $pacjent->getId())
+      ->orderBy('r.data_rozpoczecia DESC')
+    ;
+
+    return $q->execute();
+  }
+
 }
