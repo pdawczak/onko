@@ -12,5 +12,14 @@ class ChemioterapiaForm extends BaseChemioterapiaForm
 {
   public function configure()
   {
+    $this->useFields(array('data_rozpoczecia', 'data_zakonczenia', 'lek_id'));
+
+    $this->validatorSchema['data_rozpoczecia']->setOption('required', true);
+
+    $this->widgetSchema['lek_id'] = new sfWidgetFormDoctrineChoice(array(
+      'model'     => $this->getRelatedModelName('Leki'),
+      'add_empty' => false,
+      'query'     => LekTable::getInstance()->myGetLekiForChemioterapia()
+    ));
   }
 }
