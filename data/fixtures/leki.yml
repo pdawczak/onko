@@ -1,0 +1,49 @@
+Lek:
+
+  lek_c_01:
+    rodzaj:           c
+    nazwa_leku:       Przykładowy lek 1 (Chemioterapia)
+
+  lek_c_02:
+    rodzaj:           c
+    nazwa_leku:       Przykładowy lek 2 (Chemioterapia)
+
+  lek_c_03:
+    rodzaj:           c
+    nazwa_leku:       Przykładowy lek 3 (Chemioterapia)
+
+  lek_c_04:
+    rodzaj:           c
+    nazwa_leku:       Przykładowy lek 4 (Chemioterapia)
+
+  lek_c_05:
+    rodzaj:           c
+    nazwa_leku:       Przykładowy lek 5 (Chemioterapia)
+
+  lek_a_01:
+    rodzaj:           a
+    nazwa_leku:       Przykładowy lek 1 (Alergia)
+
+  lek_a_02:
+    rodzaj:           a
+    nazwa_leku:       Przykładowy lek 2 (Alergia)
+
+  lek_a_03:
+    rodzaj:           a
+    nazwa_leku:       Przykładowy lek 3 (Alergia)
+
+  lek_i_01:
+    rodzaj:           i
+    nazwa_leku:       Przykładowy lek 1 (Inne)
+
+  lek_i_02:
+    rodzaj:           i
+    nazwa_leku:       Przykładowy lek 2 (Inne)
+
+  lek_i_03:
+    rodzaj:           i
+    nazwa_leku:       Przykładowy lek 3 (Inne)
+
+  lek_i_04:
+    rodzaj:           i
+    nazwa_leku:       Przykładowy lek 4 (Inne)
