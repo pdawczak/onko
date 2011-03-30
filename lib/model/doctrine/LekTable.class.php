@@ -7,13 +7,29 @@
  */
 class LekTable extends Doctrine_Table
 {
-    /**
-     * Returns an instance of this class.
-     *
-     * @return object LekTable
-     */
-    public static function getInstance()
-    {
-        return Doctrine_Core::getTable('Lek');
-    }
+  const LEK_ALERGIA       = 'a';
+  const LEK_CHEMIOTERAPIA = 'c';
+  const LEK_INNE          = 'i';
+
+  /**
+   * Returns an instance of this class.
+   *
+   * @return LekTable
+   */
+  public static function getInstance()
+  {
+    return Doctrine_Core::getTable('Lek');
+  }
+
+  public function myGetLekiForChemioterapia()
+  {
+    $q = $this
+      ->createQuery('l')
+      ->addWhere('l.rodzaj = ?', self::LEK_CHEMIOTERAPIA)
+      ->orderBy('l.nazwa_leku ASC')
+    ;
+
+    return $q;
+  }
+
 }
