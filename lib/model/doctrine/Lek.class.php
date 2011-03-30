@@ -12,4 +12,8 @@
  */
 class Lek extends BaseLek
 {
+  public function __toString()
+  {
+    return $this->getNazwaLeku();
+  }
 }
