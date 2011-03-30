@@ -23,7 +23,7 @@ class RadioterapiaTable extends Doctrine_Table
    * @param Pacjent $pacjent
    * @return Doctrine_Collection
    */
-  public function getSortedRadioterapieForPacjent(Pacjent $pacjent)
+  public function myGetSortedRadioterapieForPacjent(Pacjent $pacjent)
   {
     $q = $this
       ->createQuery('r')
