@@ -70,9 +70,20 @@ class Pacjent extends BasePacjent
   {
     return sprintf('%s, %s (%s l.)', $this->nazwisko, $this->imie, $this->getWiek());
   }
-
+  
+  /**
+   * @return Doctrine_Collection
+   */
   public function getSortedRadioterapie()
   {
-    return RadioterapiaTable::getInstance()->getSortedRadioterapieForPacjent($this);
+    return RadioterapiaTable::getInstance()->myGetSortedRadioterapieForPacjent($this);
+  }
+
+  /**
+   * @return Doctrine_Collection
+   */
+  public function getSortedChemioterapie()
+  {
+    return ChemioterapiaTable::getInstance()->myGetSortedChemioterapieForPacjent($this);
   }
 }
