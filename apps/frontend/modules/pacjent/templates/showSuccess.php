@@ -99,6 +99,14 @@ Ext.onReady(function(){
                 please_wait_window();
                 window.location = '<?php echo url_for('pacjent_dodaj_radioterapie', $pacjent) ?>';
               }
+            },
+            {
+              text    : 'Chemioterapię',
+              iconCls : 'icon-lightbulb',
+              handler : function() {
+                please_wait_window();
+                window.location = '<?php echo url_for('pacjent_dodaj_chemioterapie', $pacjent) ?>';
+              }
             }
           ]
         },
@@ -198,6 +206,10 @@ Ext.onReady(function(){
             {
               title     : 'Radioterapie',
               html      : '<?php echo myGetPartial('pacjent/radioterapie', array('pacjent' => $pacjent)) ?>'
+            },
+            {
+              title     : 'Chemioterapie',
+              html      : '<?php echo myGetPartial('pacjent/chemioterapie', array('pacjent' => $pacjent)) ?>'
             },
 //            {
 //              title     : 'Alergie',
