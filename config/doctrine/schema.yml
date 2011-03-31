@@ -116,7 +116,6 @@ Chemioterapia:
   relations:
     Lek:
       local:          lek_id
-      alias:          Leki
     Pacjent:
       local:          pacjent_id
       foreignAlias:   Chemioterapie
