@@ -15,14 +15,14 @@ abstract class BaseChemioterapiaFormFilter extends BaseFormFilterDoctrine
     $this->setWidgets(array(
       'data_rozpoczecia' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
       'data_zakonczenia' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
-      'lek_id'           => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Leki'), 'add_empty' => true)),
+      'lek_id'           => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Lek'), 'add_empty' => true)),
       'pacjent_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Pacjent'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
       'data_rozpoczecia' => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDateTime(array('required' => false)))),
       'data_zakonczenia' => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDateTime(array('required' => false)))),
-      'lek_id'           => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Leki'), 'column' => 'id')),
+      'lek_id'           => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Lek'), 'column' => 'id')),
       'pacjent_id'       => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Pacjent'), 'column' => 'id')),
     ));
 

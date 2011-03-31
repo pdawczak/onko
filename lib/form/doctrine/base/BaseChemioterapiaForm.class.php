@@ -18,7 +18,7 @@ abstract class BaseChemioterapiaForm extends BaseFormDoctrine
       'id'               => new sfWidgetFormInputHidden(),
       'data_rozpoczecia' => new sfWidgetFormDate(),
       'data_zakonczenia' => new sfWidgetFormDate(),
-      'lek_id'           => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Leki'), 'add_empty' => true)),
+      'lek_id'           => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Lek'), 'add_empty' => true)),
       'pacjent_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Pacjent'), 'add_empty' => true)),
     ));
 
@@ -26,7 +26,7 @@ abstract class BaseChemioterapiaForm extends BaseFormDoctrine
       'id'               => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'data_rozpoczecia' => new sfValidatorDate(array('required' => false)),
       'data_zakonczenia' => new sfValidatorDate(array('required' => false)),
-      'lek_id'           => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Leki'), 'required' => false)),
+      'lek_id'           => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Lek'), 'required' => false)),
       'pacjent_id'       => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Pacjent'), 'required' => false)),
     ));
 

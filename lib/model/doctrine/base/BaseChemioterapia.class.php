@@ -9,20 +9,20 @@
  * @property date $data_zakonczenia
  * @property integer $lek_id
  * @property integer $pacjent_id
- * @property Lek $Leki
+ * @property Lek $Lek
  * @property Pacjent $Pacjent
  * 
  * @method date          getDataRozpoczecia()  Returns the current record's "data_rozpoczecia" value
  * @method date          getDataZakonczenia()  Returns the current record's "data_zakonczenia" value
  * @method integer       getLekId()            Returns the current record's "lek_id" value
  * @method integer       getPacjentId()        Returns the current record's "pacjent_id" value
- * @method Lek           getLeki()             Returns the current record's "Leki" value
+ * @method Lek           getLek()              Returns the current record's "Lek" value
  * @method Pacjent       getPacjent()          Returns the current record's "Pacjent" value
  * @method Chemioterapia setDataRozpoczecia()  Sets the current record's "data_rozpoczecia" value
  * @method Chemioterapia setDataZakonczenia()  Sets the current record's "data_zakonczenia" value
  * @method Chemioterapia setLekId()            Sets the current record's "lek_id" value
  * @method Chemioterapia setPacjentId()        Sets the current record's "pacjent_id" value
- * @method Chemioterapia setLeki()             Sets the current record's "Leki" value
+ * @method Chemioterapia setLek()              Sets the current record's "Lek" value
  * @method Chemioterapia setPacjent()          Sets the current record's "Pacjent" value
  * 
  * @package    onko_gliwice
@@ -54,7 +54,7 @@ abstract class BaseChemioterapia extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('Lek as Leki', array(
+        $this->hasOne('Lek', array(
              'local' => 'lek_id',
              'foreign' => 'id'));
 
