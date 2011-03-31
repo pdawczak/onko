@@ -17,7 +17,7 @@ class ChemioterapiaForm extends BaseChemioterapiaForm
     $this->validatorSchema['data_rozpoczecia']->setOption('required', true);
 
     $this->widgetSchema['lek_id'] = new sfWidgetFormDoctrineChoice(array(
-      'model'     => $this->getRelatedModelName('Leki'),
+      'model'     => $this->getRelatedModelName('Lek'),
       'add_empty' => false,
       'query'     => LekTable::getInstance()->myGetLekiForChemioterapia()
     ));
