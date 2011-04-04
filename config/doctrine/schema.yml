@@ -120,3 +120,32 @@ Chemioterapia:
       local:          pacjent_id
       foreignAlias:   Chemioterapie
       onDelete:       CASCADE
+
+Dieta:
+  columns:
+    badanie_id:       { type: integer(8)  }
+    bezmiesna:        { type: boolean }
+    zroznicowana:     { type: boolean }
+  relations:
+    Badanie:
+      local:          badanie_id
+      onDelete:       CASCADE
+      foreignType:    one
+
+Produkt:
+  columns:
+    nazwa:            { type: string(255) }
+
+DietaProdukt:
+  columns:
+    dieta_id:         { type: integer(8) }
+    produkt_id:       { type: integer(8) }
+    duza_ilosc:       { type: boolean }
+  relations:
+    Dieta:
+      local:          dieta_id
+      onDelete:       CASCADE
+    Produkt:
+      local:          produkt_id
+      onDelete:       CASCADE
+
