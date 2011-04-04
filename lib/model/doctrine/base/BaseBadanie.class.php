@@ -12,6 +12,7 @@
  * @property Pacjent $Pacjent
  * @property Doctrine_Collection $Uzywki
  * @property WynikBadania $WynikBadania
+ * @property Dieta $Dieta
  * 
  * @method integer             getPacjentId()    Returns the current record's "pacjent_id" value
  * @method date                getDataBadania()  Returns the current record's "data_badania" value
@@ -20,6 +21,7 @@
  * @method Pacjent             getPacjent()      Returns the current record's "Pacjent" value
  * @method Doctrine_Collection getUzywki()       Returns the current record's "Uzywki" collection
  * @method WynikBadania        getWynikBadania() Returns the current record's "WynikBadania" value
+ * @method Dieta               getDieta()        Returns the current record's "Dieta" value
  * @method Badanie             setPacjentId()    Sets the current record's "pacjent_id" value
  * @method Badanie             setDataBadania()  Sets the current record's "data_badania" value
  * @method Badanie             setInne()         Sets the current record's "inne" value
@@ -27,6 +29,7 @@
  * @method Badanie             setPacjent()      Sets the current record's "Pacjent" value
  * @method Badanie             setUzywki()       Sets the current record's "Uzywki" collection
  * @method Badanie             setWynikBadania() Sets the current record's "WynikBadania" value
+ * @method Badanie             setDieta()        Sets the current record's "Dieta" value
  * 
  * @package    onko_gliwice
  * @subpackage model
@@ -69,6 +72,10 @@ abstract class BaseBadanie extends sfDoctrineRecord
              'foreign' => 'badanie_id'));
 
         $this->hasOne('WynikBadania', array(
+             'local' => 'id',
+             'foreign' => 'badanie_id'));
+
+        $this->hasOne('Dieta', array(
              'local' => 'id',
              'foreign' => 'badanie_id'));
     }
