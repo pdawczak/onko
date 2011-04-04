@@ -20,6 +20,14 @@ badanie_szczegoly:
   param:      { module: badanie, action: show }
   options:    { model: Badanie, type: object }
 
+badanie:
+  url:        /badanie
+  class:      sfDoctrineRouteCollection
+  options:    
+    model: Badanie
+    object_actions:
+      dodaj_diete:   [get, post]
+
 badanie_submit:
   url:        /badanie/:id/submit
   class:      sfDoctrineRoute
