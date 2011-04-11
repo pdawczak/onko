@@ -19,17 +19,18 @@ class badanieActions extends sfActions
 
   public function executeShow(sfWebRequest $request)
   {
-    $this->badanie = Doctrine_Core::getTable('Badanie')->find(array($request->getParameter('id')));
+    // $this->badanie = Doctrine_Core::getTable('Badanie')->find(array($request->getParameter('id')));
+    $this->badanie = $this->getRoute()->getObject(); 
     $this->forward404Unless($this->badanie);
-    $this->pacjent = Doctrine_Core::getTable('Pacjent')->find($request->getParameter('pacjent_id'));
-    if (! $this->badanie->getWynikBadania())
+    // $this->pacjent = Doctrine_Core::getTable('Pacjent')->find($request->getParameter('pacjent_id'));
+    $this->pacjent = $this->badanie->getPacjent();
+    $this->forward404Unless($request->getParameter('pacjent_id') == $this->pacjent->getId()); 
+
+    if (! $this->badanie->getWynikBadania()->getId())
     {
-      die('Nie ma wyników do tgo badania');
+      $this->setTemplate('brak_wynikow');
     }
-    else
-    {
-      die('Są wyniki do tego badania');
-    }
+
   }
 
   public function executeNew(sfWebRequest $request)
@@ -164,4 +165,26 @@ class badanieActions extends sfActions
 
     return $result;
   }
+  
+  public function executeDodaj_diete(sfWebRequest $request)
+  {
+    $this->badanie = $this->getRoute()->getObject();
+    $this->forward404Unless($this->badanie || ! $this->getDieta()->getId());
+    
+    $dieta = new Dieta();
+    $dieta->setBadanie($this->badanie);
+
+    $this->form = new DietaForm($dieta);
+
+    if ($request->getMethod() == sfRequest::POST)
+    {
+      $this->form->bind($request->getPostParameter($this->form->getName()));
+      if ($this->form->isValid())
+      {
+        $this->form->save();
+        $this->redirect('badanie_szczegoly', $this->badanie);
+      }
+    }
+  }
+
 }
