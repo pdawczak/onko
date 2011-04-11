@@ -20,8 +20,8 @@ badanie_szczegoly:
   param:      { module: badanie, action: show }
   options:    { model: Badanie, type: object }
   requirements:
-    pacjent_id: /+d
-    id:         /+d
+    pacjent_id: \d+
+    id:         \d+
 
 badanie:
   url:        /badanie
