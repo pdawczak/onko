@@ -12,5 +12,7 @@ class DietaProduktForm extends BaseDietaProduktForm
 {
   public function configure()
   {
+    $this->useFields(array('duza_ilosc'));
+    $this->widgetSchema['duza_ilosc']->setLabel(false);
   }
 }
