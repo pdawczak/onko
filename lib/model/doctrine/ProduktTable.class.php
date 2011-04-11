@@ -18,4 +18,16 @@ class ProduktTable extends Doctrine_Table
     return Doctrine_Core::getTable('Produkt');
   }
 
+  /**
+   * @return Doctrine_Collection
+   */
+  public function myGetSortedProdukty()
+  {
+    $q = $this
+      ->createQuery('p')
+      ->orderBy('p.nazwa ASC')
+    ;
+
+    return $q->execute();
+  }
 }
