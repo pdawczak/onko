@@ -12,5 +12,18 @@ class DietaForm extends BaseDietaForm
 {
   public function configure()
   {
+    $this->useFields(array('bezmiesna', 'zroznicowana'));
+
+    $produkty = ProduktTable::getInstance()->myGetSortedProdukty();
+
+    foreach ($produkty as $produkt)
+    {
+      $tmp = new DietaProdukt();
+      $tmp->setDieta($this->getObject())->setProdukt($produkt);
+
+      $tmp_frm = new DietaProduktForm($tmp); 
+
+      $this->embedForm($produkt->getNazwa(), $tmp_frm);
+    }
   }
 }
