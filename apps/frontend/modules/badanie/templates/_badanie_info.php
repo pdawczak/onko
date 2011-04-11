@@ -5,11 +5,12 @@
     padding-right: 5px;
   }
 </style>
+
 <table>
   <tbody>
     <tr>
       <th>Data badania:</th>
-      <td><?php echo $badanie->getDateTimeObject('data_badania')->format('d.m.Y') ?></td>
+      <td><?php echo myFormatDate($badanie->getDataBadania()) //$badanie->getDateTimeObject('data_badania')->format('d.m.Y') ?></td>
     </tr>
     <tr>
       <th>Ocena stanu guza:</th>
