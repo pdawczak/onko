@@ -12,4 +12,11 @@
  */
 class Produkt extends BaseProdukt
 {
+  /**
+   * @return string
+   */
+  public function __toString()
+  {
+    return $this->getNazwa();
+  }
 }
