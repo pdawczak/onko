@@ -13,15 +13,17 @@ abstract class BaseDietaFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'badanie_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Badanie'), 'add_empty' => true)),
-      'bezmiesna'    => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
-      'zroznicowana' => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
+      'badanie_id'                     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Badanie'), 'add_empty' => true)),
+      'bezmiesna'                      => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
+      'zroznicowana'                   => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
+      'najczesciej_spozywane_produkty' => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
-      'badanie_id'   => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Badanie'), 'column' => 'id')),
-      'bezmiesna'    => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
-      'zroznicowana' => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
+      'badanie_id'                     => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Badanie'), 'column' => 'id')),
+      'bezmiesna'                      => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
+      'zroznicowana'                   => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
+      'najczesciej_spozywane_produkty' => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('dieta_filters[%s]');
@@ -41,10 +43,11 @@ abstract class BaseDietaFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id'           => 'Number',
-      'badanie_id'   => 'ForeignKey',
-      'bezmiesna'    => 'Boolean',
-      'zroznicowana' => 'Boolean',
+      'id'                             => 'Number',
+      'badanie_id'                     => 'ForeignKey',
+      'bezmiesna'                      => 'Boolean',
+      'zroznicowana'                   => 'Boolean',
+      'najczesciej_spozywane_produkty' => 'Text',
     );
   }
 }

@@ -15,17 +15,19 @@ abstract class BaseDietaForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'id'           => new sfWidgetFormInputHidden(),
-      'badanie_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Badanie'), 'add_empty' => true)),
-      'bezmiesna'    => new sfWidgetFormInputCheckbox(),
-      'zroznicowana' => new sfWidgetFormInputCheckbox(),
+      'id'                             => new sfWidgetFormInputHidden(),
+      'badanie_id'                     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Badanie'), 'add_empty' => true)),
+      'bezmiesna'                      => new sfWidgetFormInputCheckbox(),
+      'zroznicowana'                   => new sfWidgetFormInputCheckbox(),
+      'najczesciej_spozywane_produkty' => new sfWidgetFormTextarea(),
     ));
 
     $this->setValidators(array(
-      'id'           => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'badanie_id'   => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Badanie'), 'required' => false)),
-      'bezmiesna'    => new sfValidatorBoolean(array('required' => false)),
-      'zroznicowana' => new sfValidatorBoolean(array('required' => false)),
+      'id'                             => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'badanie_id'                     => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Badanie'), 'required' => false)),
+      'bezmiesna'                      => new sfValidatorBoolean(array('required' => false)),
+      'zroznicowana'                   => new sfValidatorBoolean(array('required' => false)),
+      'najczesciej_spozywane_produkty' => new sfValidatorString(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('dieta[%s]');

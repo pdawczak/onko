@@ -8,19 +8,22 @@
  * @property integer $badanie_id
  * @property boolean $bezmiesna
  * @property boolean $zroznicowana
+ * @property clob $najczesciej_spozywane_produkty
  * @property Badanie $Badanie
  * @property Doctrine_Collection $DietaProdukt
  * 
- * @method integer             getBadanieId()    Returns the current record's "badanie_id" value
- * @method boolean             getBezmiesna()    Returns the current record's "bezmiesna" value
- * @method boolean             getZroznicowana() Returns the current record's "zroznicowana" value
- * @method Badanie             getBadanie()      Returns the current record's "Badanie" value
- * @method Doctrine_Collection getDietaProdukt() Returns the current record's "DietaProdukt" collection
- * @method Dieta               setBadanieId()    Sets the current record's "badanie_id" value
- * @method Dieta               setBezmiesna()    Sets the current record's "bezmiesna" value
- * @method Dieta               setZroznicowana() Sets the current record's "zroznicowana" value
- * @method Dieta               setBadanie()      Sets the current record's "Badanie" value
- * @method Dieta               setDietaProdukt() Sets the current record's "DietaProdukt" collection
+ * @method integer             getBadanieId()                      Returns the current record's "badanie_id" value
+ * @method boolean             getBezmiesna()                      Returns the current record's "bezmiesna" value
+ * @method boolean             getZroznicowana()                   Returns the current record's "zroznicowana" value
+ * @method clob                getNajczesciejSpozywaneProdukty()   Returns the current record's "najczesciej_spozywane_produkty" value
+ * @method Badanie             getBadanie()                        Returns the current record's "Badanie" value
+ * @method Doctrine_Collection getDietaProdukt()                   Returns the current record's "DietaProdukt" collection
+ * @method Dieta               setBadanieId()                      Sets the current record's "badanie_id" value
+ * @method Dieta               setBezmiesna()                      Sets the current record's "bezmiesna" value
+ * @method Dieta               setZroznicowana()                   Sets the current record's "zroznicowana" value
+ * @method Dieta               setNajczesciejSpozywaneProdukty()   Sets the current record's "najczesciej_spozywane_produkty" value
+ * @method Dieta               setBadanie()                        Sets the current record's "Badanie" value
+ * @method Dieta               setDietaProdukt()                   Sets the current record's "DietaProdukt" collection
  * 
  * @package    onko_gliwice
  * @subpackage model
@@ -41,6 +44,9 @@ abstract class BaseDieta extends sfDoctrineRecord
              ));
         $this->hasColumn('zroznicowana', 'boolean', null, array(
              'type' => 'boolean',
+             ));
+        $this->hasColumn('najczesciej_spozywane_produkty', 'clob', null, array(
+             'type' => 'clob',
              ));
     }
 
