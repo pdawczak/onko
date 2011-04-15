@@ -31,60 +31,6 @@ Ext.onReady(function(){
   Ext.QuickTips.init();
   Ext.BLANK_IMAGE_URL = '/js/ext-3.3.0/resources/images/default/s.gif';
 
-//  var wz = new Ext.data.JsonStore({
-//      url: '<?php // echo url_for('widma', array('badanie_id' => $badanie->getId(), 'lokalizacja' => 'wz')) ?>',
-//      root: 'values',
-//      fields: ['skala_ppm', 'widmo', 'linia_bazowa', 'widmo_bazowa']
-//  });
-//  wz.load();
-//  var isp = new Ext.data.JsonStore({
-//      url: '<?php // echo url_for('widma', array('badanie_id' => $badanie->getId(), 'lokalizacja' => 'isp')) ?>',
-//      root: 'values',
-//      fields: ['skala_ppm', 'widmo', 'linia_bazowa', 'widmo_bazowa']
-//  });
-//  isp.load();
-//  var isc = new Ext.data.JsonStore({
-//      url: '<?php // echo url_for('widma', array('badanie_id' => $badanie->getId(), 'lokalizacja' => 'isc')) ?>',
-//      root: 'values',
-//      fields: ['skala_ppm', 'widmo', 'linia_bazowa', 'widmo_bazowa']
-//  });
-//  isc.load();
-  //////////////////////
-
-  function chart(type) {
-    return {
-                  xtype       : 'linechart',
-                  store       : type,
-                  yField      : 'widmo',
-                  xField      : 'skala_ppm',
-                  series  : [
-                    {
-                      type        : 'line',
-                      displayName : 'Linia bazowa',
-                      yField      : 'linia_bazowa',
-                      style       : {
-                        color     : 0x99BBE8
-                      }
-                    },
-                    {
-                      type        : 'line',
-                      yField      : 'widmo_bazowa',
-                      displayName : 'Widmo, linia bazowa',
-                      style       : {
-                        color     : 0x15428B
-                      }
-                    },
-                    {
-                      type        : 'line',
-                      displayName : 'Widmo',
-                      yField      : 'widmo'
-                    }
-                  ]
-                };
-  }
-
-  //////////////////////
-
   new Ext.Viewport({
     layout          : 'fit',
     items           : new Ext.Panel({
@@ -139,20 +85,6 @@ Ext.onReady(function(){
               title     : 'Dieta',
               layout    : 'fit',
               html      : '<?php echo myGetPartial('dieta_details', array('badanie' => $badanie)) ?>',
-              iconCls   : 'icon-chart_line'
-            },
-            {
-              title     : 'Istota szara potyliczna',
-              xtype     : 'panel',
-              layout    : 'fit',
- //             items     : chart(isp),
-              iconCls   : 'icon-chart_line'
-            },
-            {
-              title     : 'Istota szara czołowa',
-              xtype     : 'panel',
-              layout    : 'fit',
-  //            items     : chart(isc),
               iconCls   : 'icon-chart_line'
             }
           ]
