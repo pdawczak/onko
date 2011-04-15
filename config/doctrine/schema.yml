@@ -123,9 +123,10 @@ Chemioterapia:
 
 Dieta:
   columns:
-    badanie_id:       { type: integer(8)  }
-    bezmiesna:        { type: boolean }
-    zroznicowana:     { type: boolean }
+    badanie_id:                     { type: integer(8)  }
+    bezmiesna:                      { type: boolean }
+    zroznicowana:                   { type: boolean }
+    najczesciej_spozywane_produkty: { type: clob }
   relations:
     Badanie:
       local:          badanie_id
