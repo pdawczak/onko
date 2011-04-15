@@ -18,4 +18,13 @@ class DietaProduktTable extends Doctrine_Table
     return Doctrine_Core::getTable('DietaProdukt');
   }
 
+  public function myGetProdyktyForDieta(Dieta $dieta)
+  {
+    $q = $this
+      ->createQuery()
+      ->addWhere('dieta_id = ?', $dieta->getId())
+    ;
+
+    return $q->execute();
+  }
 }
