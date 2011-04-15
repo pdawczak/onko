@@ -12,4 +12,11 @@
  */
 class Dieta extends BaseDieta
 {
+  /**
+   * @return Doctrine_Collection
+   */
+  public function getProdukty()
+  {
+    return DietaProduktTable::getInstance()->myGetProdyktyForDieta($this);
+  }
 }
