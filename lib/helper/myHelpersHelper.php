@@ -15,3 +15,10 @@ function myBooleanWord($val)
 {
   return $val ? 'Tak' : 'Nie';
 }
+
+function myBooleanImage($val)
+{
+  $image_path = 'icons/';
+  $image_path .= $val ? 'bullet_tick.png' : 'bullet_cross.png';
+  return image_tag($image_path);
+}
