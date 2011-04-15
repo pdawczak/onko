@@ -1,37 +1,27 @@
-<!--<table>
-  <tbody>
-    <tr>
-      <th>Id:</th>
-      <td><?php echo $badanie->getId() ?></td>
-    </tr>
-    <tr>
-      <th>Pacjent:</th>
-      <td><?php echo $badanie->getPacjentId() ?></td>
-    </tr>
-    <tr>
-      <th>Data badania:</th>
-      <td><?php echo $badanie->getDataBadania() ?></td>
-    </tr>
-    <tr>
-      <th>Inne:</th>
-      <td><?php echo $badanie->getInne() ?></td>
-    </tr>
-    <tr>
-      <th>Menstruacja:</th>
-      <td><?php echo $badanie->getMenstruacja() ?></td>
-    </tr>
-  </tbody>
-</table>
-<hr />
-
-<a href="<?php echo url_for('badanie/edit?id='.$badanie->getId()) ?>">Edit</a>
-&nbsp;
-<a href="<?php echo url_for('badanie/index') ?>">List</a>
--->
 <?php /* @var $badanie Badanie */ ?>
 <?php use_helper('myHelpers') ?>
 
 <style type="text/css">
+.cell-result-item {
+  float: left;
+  padding: 10px 0;
+  font: 11px/13px arial,tahoma,helvetica,sans-serif;
+}
+.cell-result-cleaner {
+  clear: both;
+}
+.my-link {
+  color: blue;
+}
+.my-link:hover {
+  text-decoration: none;
+}
+.result-item-date,
+.result-item-result {
+  font-size: 120%;
+}
+</style>
+
 
 </style>
 
@@ -41,6 +31,60 @@ Ext.onReady(function(){
   Ext.QuickTips.init();
   Ext.BLANK_IMAGE_URL = '/js/ext-3.3.0/resources/images/default/s.gif';
 
+//  var wz = new Ext.data.JsonStore({
+//      url: '<?php // echo url_for('widma', array('badanie_id' => $badanie->getId(), 'lokalizacja' => 'wz')) ?>',
+//      root: 'values',
+//      fields: ['skala_ppm', 'widmo', 'linia_bazowa', 'widmo_bazowa']
+//  });
+//  wz.load();
+//  var isp = new Ext.data.JsonStore({
+//      url: '<?php // echo url_for('widma', array('badanie_id' => $badanie->getId(), 'lokalizacja' => 'isp')) ?>',
+//      root: 'values',
+//      fields: ['skala_ppm', 'widmo', 'linia_bazowa', 'widmo_bazowa']
+//  });
+//  isp.load();
+//  var isc = new Ext.data.JsonStore({
+//      url: '<?php // echo url_for('widma', array('badanie_id' => $badanie->getId(), 'lokalizacja' => 'isc')) ?>',
+//      root: 'values',
+//      fields: ['skala_ppm', 'widmo', 'linia_bazowa', 'widmo_bazowa']
+//  });
+//  isc.load();
+  //////////////////////
+
+  function chart(type) {
+    return {
+                  xtype       : 'linechart',
+                  store       : type,
+                  yField      : 'widmo',
+                  xField      : 'skala_ppm',
+                  series  : [
+                    {
+                      type        : 'line',
+                      displayName : 'Linia bazowa',
+                      yField      : 'linia_bazowa',
+                      style       : {
+                        color     : 0x99BBE8
+                      }
+                    },
+                    {
+                      type        : 'line',
+                      yField      : 'widmo_bazowa',
+                      displayName : 'Widmo, linia bazowa',
+                      style       : {
+                        color     : 0x15428B
+                      }
+                    },
+                    {
+                      type        : 'line',
+                      displayName : 'Widmo',
+                      yField      : 'widmo'
+                    }
+                  ]
+                };
+  }
+
+  //////////////////////
+
   new Ext.Viewport({
     layout          : 'fit',
     items           : new Ext.Panel({
@@ -48,6 +92,21 @@ Ext.onReady(function(){
       iconCls       : 'icon-folder_lightbulb',
       border        : false,
       tbar          : [
+        {
+	  text      : 'Dodaj',
+          xtype     : 'tbbutton',
+	  menu      : [
+            {
+              text    : 'Dietę',
+	      <?php if ($badanie->getHasDieta()) :  ?>
+              disabled: true,
+	      <?php endif ?>
+              handler : function(){
+	        window.location = '<?php echo url_for('badanie_dodaj_diete', $badanie) ?>';
+	      }
+	    }
+          ]
+	},
         '->',
         {
           text      : 'Powrót',
@@ -77,24 +136,23 @@ Ext.onReady(function(){
           items         : [
             {
               xtype     : 'panel',
-              title     : 'Wzgórze',
+              title     : 'Dieta',
               layout    : 'fit',
-//              items     : dv,
-              html      : 'WZGÓRZE',
+              html      : '<?php echo myGetPartial('dieta_details', array('badanie' => $badanie)) ?>',
               iconCls   : 'icon-chart_line'
             },
             {
               title     : 'Istota szara potyliczna',
               xtype     : 'panel',
               layout    : 'fit',
-              html      : 'ISTOTA SZARA POTYLICZNA',
+ //             items     : chart(isp),
               iconCls   : 'icon-chart_line'
             },
             {
               title     : 'Istota szara czołowa',
               xtype     : 'panel',
               layout    : 'fit',
-              html      : '<?php //echo $badanie->getWynikBadania()->getWidmo(Widmo::WZGORZE)->getSkalaPpm() ?>',
+  //            items     : chart(isc),
               iconCls   : 'icon-chart_line'
             }
           ]
@@ -103,7 +161,7 @@ Ext.onReady(function(){
           region      : 'north',
           title       : '',
           iconCls     : 'icon-lightbulb',
-          html        : '<?php //echo myGetPartial('badanie/badanie_info', array('badanie' => $badanie)) ?>',
+          html        : '<?php echo myGetPartial('badanie/badanie_info', array('badanie' => $badanie)) ?>',
           collapsible : true,
           frame       : true,
           margins     : {
