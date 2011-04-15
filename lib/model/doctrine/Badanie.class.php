@@ -12,4 +12,13 @@
  */
 class Badanie extends BaseBadanie
 {
+
+  /**
+   * @return boolean
+   */
+  public function getHasDieta()
+  {
+    return (boolean) ($this->getDieta()->getId() !== null);
+  }
 }
+
