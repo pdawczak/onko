@@ -18,4 +18,16 @@ class RodzajRadioterapiiTable extends Doctrine_Table
     return Doctrine_Core::getTable('RodzajRadioterapii');
   }
 
+  /**
+   * @return Doctrine_Query
+   */
+  public function myGetSortedRodzajeRadioterapii()
+  {
+    $q = $this
+      ->createQuery('r')
+      ->orderBy('r.nazwa')
+    ;
+
+    return $q;
+  }
 }
