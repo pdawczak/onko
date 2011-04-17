@@ -12,7 +12,7 @@ class DietaForm extends BaseDietaForm
 {
   public function configure()
   {
-    $this->useFields(array('bezmiesna', 'zroznicowana'));
+    $this->useFields(array('bezmiesna', 'zroznicowana', 'najczesciej_spozywane_produkty'));
 
     $produkty = ProduktTable::getInstance()->myGetSortedProdukty();
 
