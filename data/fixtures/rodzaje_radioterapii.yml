@@ -1,0 +1,18 @@
+RodzajRadioterapii:
+  
+  po:
+    nazwa: Pooperacyjna
+    skrot: PO
+
+  rd:
+    nazwa: Radykalna
+    skrot: RD
+
+  ste:
+    nazwa: Stereotaktyczna
+    skrot: STE
+
+  pal:
+    nazwa: Paliatywna
+    skrot: PAL
+
