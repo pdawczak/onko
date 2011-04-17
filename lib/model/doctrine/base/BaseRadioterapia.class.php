@@ -14,28 +14,34 @@
  * @property int $ctv
  * @property int $ptv
  * @property int $pacjent_id
+ * @property int $rodzaj_radioterapii_id
  * @property Pacjent $Pacjent
+ * @property RodzajRadioterapii $RodzajRadioterapii
  * 
- * @method date         getDataRozpoczecia()  Returns the current record's "data_rozpoczecia" value
- * @method decimal      getDawkaFr()          Returns the current record's "dawka_fr" value
- * @method decimal      getDawkaTotal()       Returns the current record's "dawka_total" value
- * @method date         getDataZakonczenia()  Returns the current record's "data_zakonczenia" value
- * @method boolean      getStereo()           Returns the current record's "stereo" value
- * @method int          getGtv()              Returns the current record's "gtv" value
- * @method int          getCtv()              Returns the current record's "ctv" value
- * @method int          getPtv()              Returns the current record's "ptv" value
- * @method int          getPacjentId()        Returns the current record's "pacjent_id" value
- * @method Pacjent      getPacjent()          Returns the current record's "Pacjent" value
- * @method Radioterapia setDataRozpoczecia()  Sets the current record's "data_rozpoczecia" value
- * @method Radioterapia setDawkaFr()          Sets the current record's "dawka_fr" value
- * @method Radioterapia setDawkaTotal()       Sets the current record's "dawka_total" value
- * @method Radioterapia setDataZakonczenia()  Sets the current record's "data_zakonczenia" value
- * @method Radioterapia setStereo()           Sets the current record's "stereo" value
- * @method Radioterapia setGtv()              Sets the current record's "gtv" value
- * @method Radioterapia setCtv()              Sets the current record's "ctv" value
- * @method Radioterapia setPtv()              Sets the current record's "ptv" value
- * @method Radioterapia setPacjentId()        Sets the current record's "pacjent_id" value
- * @method Radioterapia setPacjent()          Sets the current record's "Pacjent" value
+ * @method date               getDataRozpoczecia()        Returns the current record's "data_rozpoczecia" value
+ * @method decimal            getDawkaFr()                Returns the current record's "dawka_fr" value
+ * @method decimal            getDawkaTotal()             Returns the current record's "dawka_total" value
+ * @method date               getDataZakonczenia()        Returns the current record's "data_zakonczenia" value
+ * @method boolean            getStereo()                 Returns the current record's "stereo" value
+ * @method int                getGtv()                    Returns the current record's "gtv" value
+ * @method int                getCtv()                    Returns the current record's "ctv" value
+ * @method int                getPtv()                    Returns the current record's "ptv" value
+ * @method int                getPacjentId()              Returns the current record's "pacjent_id" value
+ * @method int                getRodzajRadioterapiiId()   Returns the current record's "rodzaj_radioterapii_id" value
+ * @method Pacjent            getPacjent()                Returns the current record's "Pacjent" value
+ * @method RodzajRadioterapii getRodzajRadioterapii()     Returns the current record's "RodzajRadioterapii" value
+ * @method Radioterapia       setDataRozpoczecia()        Sets the current record's "data_rozpoczecia" value
+ * @method Radioterapia       setDawkaFr()                Sets the current record's "dawka_fr" value
+ * @method Radioterapia       setDawkaTotal()             Sets the current record's "dawka_total" value
+ * @method Radioterapia       setDataZakonczenia()        Sets the current record's "data_zakonczenia" value
+ * @method Radioterapia       setStereo()                 Sets the current record's "stereo" value
+ * @method Radioterapia       setGtv()                    Sets the current record's "gtv" value
+ * @method Radioterapia       setCtv()                    Sets the current record's "ctv" value
+ * @method Radioterapia       setPtv()                    Sets the current record's "ptv" value
+ * @method Radioterapia       setPacjentId()              Sets the current record's "pacjent_id" value
+ * @method Radioterapia       setRodzajRadioterapiiId()   Sets the current record's "rodzaj_radioterapii_id" value
+ * @method Radioterapia       setPacjent()                Sets the current record's "Pacjent" value
+ * @method Radioterapia       setRodzajRadioterapii()     Sets the current record's "RodzajRadioterapii" value
  * 
  * @package    onko_gliwice
  * @subpackage model
@@ -79,6 +85,10 @@ abstract class BaseRadioterapia extends sfDoctrineRecord
              'type' => 'int',
              'length' => 8,
              ));
+        $this->hasColumn('rodzaj_radioterapii_id', 'int', 8, array(
+             'type' => 'int',
+             'length' => 8,
+             ));
     }
 
     public function setUp()
@@ -88,5 +98,10 @@ abstract class BaseRadioterapia extends sfDoctrineRecord
              'local' => 'pacjent_id',
              'foreign' => 'id',
              'onDelete' => 'CASCADE'));
+
+        $this->hasOne('RodzajRadioterapii', array(
+             'local' => 'rodzaj_radioterapii_id',
+             'foreign' => 'id',
+             'onDelete' => 'SET NULL'));
     }
 }
