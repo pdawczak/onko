@@ -88,19 +88,28 @@ Widmo:
 
 Radioterapia:
   columns:
-    data_rozpoczecia: { type: date }
-    dawka_fr:         { type: decimal(5), scale: 2 }
-    dawka_total:      { type: decimal(5), scale: 2 }
-    data_zakonczenia: { type: date }
-    stereo:           { type: boolean }
-    gtv:              { type: int }
-    ctv:              { type: int }
-    ptv:              { type: int }
-    pacjent_id:       { type: int(8) }
+    data_rozpoczecia:        { type: date }
+    dawka_fr:                { type: decimal(5), scale: 2 }
+    dawka_total:             { type: decimal(5), scale: 2 }
+    data_zakonczenia:        { type: date }
+    stereo:                  { type: boolean }
+    gtv:                     { type: int }
+    ctv:                     { type: int }
+    ptv:                     { type: int }
+    pacjent_id:              { type: int(8) }
+    rodzaj_radioterapii_id:  { type: int(8) }
   relations:
     Pacjent:
-      local:          pacjent_id
-      onDelete:       CASCADE
+      local:                 pacjent_id
+      onDelete:              CASCADE
+    RodzajRadioterapii:
+      local:                 rodzaj_radioterapii_id
+      onDelete:              SET NULL
+
+RodzajRadioterapii:
+  columns:
+    skrot:            { type: string(5) }
+    nazwa:            { type: string(255) }
 
 Lek:
   columns:
