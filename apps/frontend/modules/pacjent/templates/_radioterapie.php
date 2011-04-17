@@ -10,6 +10,12 @@
       </div>
       <div class="result-item-result">
         <ul>
+	  <?php if ($rodzaj = $radioterapia->getRodzajRadioterapii()->getNazwa()) : ?>
+	  <li>
+	    Rodzaj:
+	    <?php echo $rodzaj ?>
+	  </li>
+	  <?php endif ?>
           <li>
             fr./total:
             <?php echo $radioterapia->getDawkaFr() ?> / <?php echo $radioterapia->getDawkaTotal() ?>
