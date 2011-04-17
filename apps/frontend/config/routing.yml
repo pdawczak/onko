@@ -28,6 +28,7 @@ badanie:
   class:      sfDoctrineRouteCollection
   options:    
     model: Badanie
+    actions:       [list, create, edit, update, delete, show]
     object_actions:
       dodaj_diete:   [get, post]
 
