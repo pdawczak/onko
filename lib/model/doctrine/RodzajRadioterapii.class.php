@@ -12,4 +12,12 @@
  */
 class RodzajRadioterapii extends BaseRodzajRadioterapii
 {
+  /**
+   * @return string
+   */
+  public function __toString()
+  {
+    return $this->getNazwa();
+  }
+
 }
