@@ -13,9 +13,11 @@ class RadioterapiaForm extends BaseRadioterapiaForm
   public function configure()
   {
     $this->useFields(array(
-      'data_rozpoczecia', 'dawka_fr', 'dawka_total', 'data_zakonczenia',
-      'stereo', 'gtv', 'ctv', 'ptv'
+      'rodzaj_radioterapii_id', 'data_rozpoczecia', 'dawka_fr', 'dawka_total', 
+      'data_zakonczenia', 'stereo', 'gtv', 'ctv', 'ptv'
     ));
+
+    $this->widgetSchema['rodzaj_radioterapii_id']->setOption('query', RodzajRadioterapiiTable::getInstance()->myGetSortedRodzajeRadioterapii());
 
     $this->validatorSchema['data_rozpoczecia']->setOption('required', true);
     $this->validatorSchema['dawka_fr']->setOption('required', true);
