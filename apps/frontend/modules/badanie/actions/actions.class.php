@@ -25,12 +25,6 @@ class badanieActions extends sfActions
     // $this->pacjent = Doctrine_Core::getTable('Pacjent')->find($request->getParameter('pacjent_id'));
     $this->pacjent = $this->badanie->getPacjent();
     $this->forward404Unless($request->getParameter('pacjent_id') == $this->pacjent->getId()); 
-
-    if (! $this->badanie->getWynikBadania()->getId())
-    {
-      $this->setTemplate('brak_wynikow');
-    }
-
   }
 
   public function executeNew(sfWebRequest $request)
