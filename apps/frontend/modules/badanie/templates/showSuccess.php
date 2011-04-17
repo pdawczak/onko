@@ -41,13 +41,15 @@ Ext.onReady(function(){
         {
 	  text      : 'Dodaj',
           xtype     : 'tbbutton',
+          iconCls   : 'icon-add',
 	  menu      : [
             {
-              text    : 'Dietę',
+              text      : 'Dietę',
+              iconCls   : 'icon-book',
 	      <?php if ($badanie->getHasDieta()) :  ?>
-              disabled: true,
+              disabled  : true,
 	      <?php endif ?>
-              handler : function(){
+              handler   : function(){
 	        window.location = '<?php echo url_for('badanie_dodaj_diete', $badanie) ?>';
 	      }
 	    }
@@ -85,7 +87,7 @@ Ext.onReady(function(){
               title     : 'Dieta',
               layout    : 'fit',
               html      : '<?php echo myGetPartial('dieta_details', array('badanie' => $badanie)) ?>',
-              iconCls   : 'icon-chart_line'
+              iconCls   : 'icon-book'
             }
           ]
         },
