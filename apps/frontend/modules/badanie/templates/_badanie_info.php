@@ -14,7 +14,13 @@
     </tr>
     <tr>
       <th>Ocena stanu guza:</th>
-      <td><?php echo $badanie->getWynikBadania()->getOcenaStanuGuzaWord() ?></td>
+      <td>
+        <?php if ($badanie->getHasWynikBadania()) : ?>
+          <?php echo $badanie->getWynikBadania()->getOcenaStanuGuzaWord() ?>
+	<?php else : ?>
+          Brak wyników badania
+	<?php endif ?>
+      </td>
     </tr>
   </tbody>
 </table>
