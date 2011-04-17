@@ -1,10 +1,12 @@
 <style type="text/css">
   thead td {
-    padding-top: 20px;
     font-weight: bold;
   }
   .better-reading td {
     border-bottom: 1px solid blue;
+  }
+  .add-space {
+    padding: 10px 0;
   }
 </style>
 <div class="cell-result-item">
@@ -16,6 +18,9 @@
     <tr><td>Bezmięsna:</td><td><?php echo myBooleanImage($badanie->getDieta()->getBezmiesna()) ?></td></tr>
     <tr><td>Zróżnicowana:</td></td><td><?php echo myBooleanImage($badanie->getDieta()->getZroznicowana()) ?></td></tr>
   </table>
+  <p class="add-space">
+    <?php echo $badanie->getDieta()->getNajczesciejSpozywaneProdukty() ?>
+  </p>
   <table>
     <thead>
       <tr>
