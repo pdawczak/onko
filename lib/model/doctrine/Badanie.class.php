@@ -20,5 +20,14 @@ class Badanie extends BaseBadanie
   {
     return (boolean) ($this->getDieta()->getId() !== null);
   }
+
+  /**
+   * @return boolean
+   */
+  public function getHasWynikBadania()
+  {
+    return (boolean) ($this->getWynikBadania()->getId() !== null);
+  }
+
 }
 
