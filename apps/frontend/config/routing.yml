@@ -24,13 +24,14 @@ badanie_szczegoly:
     id:         \d+
 
 badanie:
-  url:        /badanie
-  class:      sfDoctrineRouteCollection
+  url:                     /badanie
+  class:                   sfDoctrineRouteCollection
   options:    
-    model: Badanie
-    actions:       [list, create, edit, update, delete, show]
+    model:                 Badanie
+    actions:               [list, create, edit, update, delete, show]
     object_actions:
-      dodaj_diete:   [get, post]
+      dodaj_diete:         [get, post]
+      dodaj_wynik_badania: [get, post]
 
 badanie_submit:
   url:        /badanie/:id/submit
