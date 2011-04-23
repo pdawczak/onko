@@ -60,6 +60,8 @@ WynikBadania:
   columns:
     ocena_stanu_guza: { type: enum, values: [wz, pr, stg, bcg] }
     badanie_id:       { type: integer(8) }
+    sdat:             { type: blob }
+    spar:             { type: clob }
   relations:
     Badanie:
       local:          badanie_id
@@ -72,7 +74,7 @@ Widmo:
     widmo:            { type: clob }
     linia_bazowa:     { type: clob }
     widmo_bazowa:     { type: clob }
-    lokalizacja:      { type: enum, values: [wz, isc, isp] } # wz - wzgórze, isc - istota szara czołowa, isp - istota szara potyliczna
+    lokalizacja_id:   { type: int(8) } # wz - wzgórze, isc - istota szara czołowa, isp - istota szara potyliczna
     rozmiar_voxela_x: { type: decimal(5), scale: 2, notnull: true }
     rozmiar_voxela_y: { type: decimal(5), scale: 2, notnull: true }
     rozmiar_voxela_z: { type: decimal(5), scale: 2, notnull: true }
@@ -85,6 +87,12 @@ Widmo:
     WynikBadania:
       local:          wynik_id
       foreignAlias:   Widma
+    Lokalizacja:
+      local:          lokalizacja_id
+
+Lokalizacja:
+  columns:
+    nazwa:            { type: string(255) }
 
 Radioterapia:
   columns:
