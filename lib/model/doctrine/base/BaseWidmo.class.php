@@ -9,7 +9,7 @@
  * @property clob $widmo
  * @property clob $linia_bazowa
  * @property clob $widmo_bazowa
- * @property enum $lokalizacja
+ * @property int $lokalizacja_id
  * @property decimal $rozmiar_voxela_x
  * @property decimal $rozmiar_voxela_y
  * @property decimal $rozmiar_voxela_z
@@ -19,12 +19,13 @@
  * @property integer $ns
  * @property integer $wynik_id
  * @property WynikBadania $WynikBadania
+ * @property Lokalizacja $Lokalizacja
  * 
  * @method clob         getSkalaPpm()         Returns the current record's "skala_ppm" value
  * @method clob         getWidmo()            Returns the current record's "widmo" value
  * @method clob         getLiniaBazowa()      Returns the current record's "linia_bazowa" value
  * @method clob         getWidmoBazowa()      Returns the current record's "widmo_bazowa" value
- * @method enum         getLokalizacja()      Returns the current record's "lokalizacja" value
+ * @method int          getLokalizacjaId()    Returns the current record's "lokalizacja_id" value
  * @method decimal      getRozmiarVoxelaX()   Returns the current record's "rozmiar_voxela_x" value
  * @method decimal      getRozmiarVoxelaY()   Returns the current record's "rozmiar_voxela_y" value
  * @method decimal      getRozmiarVoxelaZ()   Returns the current record's "rozmiar_voxela_z" value
@@ -34,11 +35,12 @@
  * @method integer      getNs()               Returns the current record's "ns" value
  * @method integer      getWynikId()          Returns the current record's "wynik_id" value
  * @method WynikBadania getWynikBadania()     Returns the current record's "WynikBadania" value
+ * @method Lokalizacja  getLokalizacja()      Returns the current record's "Lokalizacja" value
  * @method Widmo        setSkalaPpm()         Sets the current record's "skala_ppm" value
  * @method Widmo        setWidmo()            Sets the current record's "widmo" value
  * @method Widmo        setLiniaBazowa()      Sets the current record's "linia_bazowa" value
  * @method Widmo        setWidmoBazowa()      Sets the current record's "widmo_bazowa" value
- * @method Widmo        setLokalizacja()      Sets the current record's "lokalizacja" value
+ * @method Widmo        setLokalizacjaId()    Sets the current record's "lokalizacja_id" value
  * @method Widmo        setRozmiarVoxelaX()   Sets the current record's "rozmiar_voxela_x" value
  * @method Widmo        setRozmiarVoxelaY()   Sets the current record's "rozmiar_voxela_y" value
  * @method Widmo        setRozmiarVoxelaZ()   Sets the current record's "rozmiar_voxela_z" value
@@ -48,6 +50,7 @@
  * @method Widmo        setNs()               Sets the current record's "ns" value
  * @method Widmo        setWynikId()          Sets the current record's "wynik_id" value
  * @method Widmo        setWynikBadania()     Sets the current record's "WynikBadania" value
+ * @method Widmo        setLokalizacja()      Sets the current record's "Lokalizacja" value
  * 
  * @package    onko_gliwice
  * @subpackage model
@@ -71,14 +74,9 @@ abstract class BaseWidmo extends sfDoctrineRecord
         $this->hasColumn('widmo_bazowa', 'clob', null, array(
              'type' => 'clob',
              ));
-        $this->hasColumn('lokalizacja', 'enum', null, array(
-             'type' => 'enum',
-             'values' => 
-             array(
-              0 => 'wz',
-              1 => 'isc',
-              2 => 'isp',
-             ),
+        $this->hasColumn('lokalizacja_id', 'int', 8, array(
+             'type' => 'int',
+             'length' => 8,
              ));
         $this->hasColumn('rozmiar_voxela_x', 'decimal', 5, array(
              'type' => 'decimal',
@@ -121,6 +119,10 @@ abstract class BaseWidmo extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('WynikBadania', array(
              'local' => 'wynik_id',
+             'foreign' => 'id'));
+
+        $this->hasOne('Lokalizacja', array(
+             'local' => 'lokalizacja_id',
              'foreign' => 'id'));
     }
 }
