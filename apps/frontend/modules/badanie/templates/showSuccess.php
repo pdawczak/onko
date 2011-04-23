@@ -39,10 +39,10 @@ Ext.onReady(function(){
       border        : false,
       tbar          : [
         {
-	  text      : 'Dodaj',
+	        text      : 'Dodaj',
           xtype     : 'tbbutton',
           iconCls   : 'icon-add',
-	  menu      : [
+	        menu      : [
             {
               text      : 'Wynik badania',
               iconCls   : 'icon-book',
