@@ -181,4 +181,24 @@ class badanieActions extends sfActions
     }
   }
 
+  public function executeDodaj_wynik_badania(sfWebRequest $request)
+  {
+    $this->badanie = $this->getRoute()->getObject();
+       
+    $wynik = new WynikBadania();
+    $wynik->setBadanie($this->badanie);
+
+    $this->form = new WynikBadaniaForm($wynik);
+
+    if ($request->getMethod() == sfRequest::POST)
+    {
+      $this->form->bind($request->getPostParameter($this->form->getName()), $request->getFiles($this->form->getName()));
+      if ($this->form->isValid())
+      {
+        $this->form->save();
+        $this->redirect('badanie_szczegoly', $this->badanie);
+      }
+    }
+  }
+
 }
