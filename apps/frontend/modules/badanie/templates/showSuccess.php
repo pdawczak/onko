@@ -44,6 +44,16 @@ Ext.onReady(function(){
           iconCls   : 'icon-add',
 	  menu      : [
             {
+              text      : 'Wynik badania',
+              iconCls   : 'icon-book',
+	      <?php if ($badanie->getHasWynikBadania()) :  ?>
+              disabled  : true,
+	      <?php endif ?>
+              handler   : function(){
+	        window.location = '<?php echo url_for('badanie_dodaj_wynik_badania', $badanie) ?>';
+	      }
+            },
+            {
               text      : 'Dietę',
               iconCls   : 'icon-book',
 	      <?php if ($badanie->getHasDieta()) :  ?>
