@@ -18,7 +18,7 @@
         <?php if ($badanie->getHasWynikBadania()) : ?>
           <?php echo $badanie->getWynikBadania()->getOcenaStanuGuzaWord() ?>
 	<?php else : ?>
-          Brak wyników badania
+          Brak wyników badania (<?php echo link_to('dodaj', 'badanie_dodaj_wynik_badania', $badanie) ?>)
 	<?php endif ?>
       </td>
     </tr>
