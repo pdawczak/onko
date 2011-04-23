@@ -94,7 +94,7 @@ Ext.onReady(function(){
             },
             {
               text    : 'Radioterapię',
-              iconCls : 'icon-lightbulb',
+              iconCls : 'icon-bullet_connect',
               handler : function() {
                 please_wait_window();
                 window.location = '<?php echo url_for('pacjent_dodaj_radioterapie', $pacjent) ?>';
@@ -102,7 +102,7 @@ Ext.onReady(function(){
             },
             {
               text    : 'Chemioterapię',
-              iconCls : 'icon-lightbulb',
+              iconCls : 'icon-bullet_connect',
               handler : function() {
                 please_wait_window();
                 window.location = '<?php echo url_for('pacjent_dodaj_chemioterapie', $pacjent) ?>';
@@ -205,10 +205,12 @@ Ext.onReady(function(){
             },
             {
               title     : 'Radioterapie',
+              iconCls   : 'icon-bullet_connect',
               html      : '<?php echo myGetPartial('pacjent/radioterapie', array('pacjent' => $pacjent)) ?>'
             },
             {
               title     : 'Chemioterapie',
+              iconCls   : 'icon-bullet_connect',
               html      : '<?php echo myGetPartial('pacjent/chemioterapie', array('pacjent' => $pacjent)) ?>'
             },
 //            {
