@@ -12,4 +12,11 @@
  */
 class Lokalizacja extends BaseLokalizacja
 {
+  /**
+   * @return string
+   */
+  public function __toString()
+  {
+    return $this->getNazwa();
+  }
 }
