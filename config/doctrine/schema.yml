@@ -60,8 +60,6 @@ WynikBadania:
   columns:
     ocena_stanu_guza: { type: enum, values: [wz, pr, stg, bcg] }
     badanie_id:       { type: integer(8) }
-    sdat:             { type: blob }
-    spar:             { type: clob }
   relations:
     Badanie:
       local:          badanie_id
@@ -70,15 +68,17 @@ WynikBadania:
 
 Widmo:
   columns:
-    skala_ppm:        { type: clob }
-    widmo:            { type: clob }
-    linia_bazowa:     { type: clob }
-    widmo_bazowa:     { type: clob }
+#   skala_ppm:        { type: clob }
+#   widmo:            { type: clob }
+#   linia_bazowa:     { type: clob }
+#   widmo_bazowa:     { type: clob }
+    sdat:             { type: blob }
+    spar:             { type: clob }
     lokalizacja_id:   { type: int(8) } # wz - wzgórze, isc - istota szara czołowa, isp - istota szara potyliczna
     rozmiar_voxela_x: { type: decimal(5), scale: 2, notnull: true }
     rozmiar_voxela_y: { type: decimal(5), scale: 2, notnull: true }
     rozmiar_voxela_z: { type: decimal(5), scale: 2, notnull: true }
-    stezenia:         { type: clob }
+#   stezenia:         { type: clob }
     te:               { type: integer }
     tr:               { type: integer }
     ns:               { type: integer }
