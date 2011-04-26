@@ -15,10 +15,6 @@ class WynikBadaniaForm extends BaseWynikBadaniaForm
     $this->widgetSchema['badanie_id'] = new sfWidgetFormInputHidden();
     $this->widgetSchema['ocena_stanu_guza'] = new sfWidgetFormChoice(array('choices' => array('wz' => 'Wznowa', 'pr' => 'Progresja', 'stg' => 'Stagnacja', 'bcg' => 'Brak cech guza')));
 
-    $this->widgetSchema['sdat']    = new sfWidgetFormInputFile();
-    $this->validatorSchema['sdat'] = new myValidatorFileContentExtractor();
-    $this->widgetSchema['spar']    = new sfWidgetFormInputFile();
-    $this->validatorSchema['spar'] = new myValidatorFileContentExtractor();
 //  if ($this->isNew)
 //  {
 //    $this->widgetSchema['control_file'] = new sfWidgetFormInputFile();
