@@ -23,6 +23,17 @@ badanie_szczegoly:
     pacjent_id: \d+
     id:         \d+
 
+dodaj_widmo:
+  url:          /badanie/wynik/:id/dodaj_widmo
+  class:        sfDoctrineRoute
+  options:
+    model:      WynikBadania
+    type:       object
+  params:       { module: badanie, action: dodaj_widmo }
+  requirements:
+    id:         \d+
+    sf_method:  [get, post]
+
 badanie:
   url:                     /badanie
   class:                   sfDoctrineRouteCollection
