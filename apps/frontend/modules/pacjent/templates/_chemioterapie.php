@@ -19,5 +19,7 @@
     <div class="cell-result-cleaner"></div>
   <?php endforeach ?>
 <?php else : ?>
-  Brak chemioterapii
+  <div class="result-item-result">
+    Brak chemioterapii
+  </div>
 <?php endif ?>

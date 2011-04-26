@@ -34,5 +34,7 @@
   <?php endforeach ?>
   <!--</ul>-->
 <?php else : ?>
-  Brak radioterapii
+  <div class="result-item-result">
+    Brak radioterapii
+  </div>
 <?php endif ?>
