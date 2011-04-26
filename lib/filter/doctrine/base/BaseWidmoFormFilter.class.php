@@ -13,15 +13,12 @@ abstract class BaseWidmoFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'skala_ppm'        => new sfWidgetFormFilterInput(),
-      'widmo'            => new sfWidgetFormFilterInput(),
-      'linia_bazowa'     => new sfWidgetFormFilterInput(),
-      'widmo_bazowa'     => new sfWidgetFormFilterInput(),
+      'sdat'             => new sfWidgetFormFilterInput(),
+      'spar'             => new sfWidgetFormFilterInput(),
       'lokalizacja_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Lokalizacja'), 'add_empty' => true)),
       'rozmiar_voxela_x' => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'rozmiar_voxela_y' => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'rozmiar_voxela_z' => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'stezenia'         => new sfWidgetFormFilterInput(),
       'te'               => new sfWidgetFormFilterInput(),
       'tr'               => new sfWidgetFormFilterInput(),
       'ns'               => new sfWidgetFormFilterInput(),
@@ -29,15 +26,12 @@ abstract class BaseWidmoFormFilter extends BaseFormFilterDoctrine
     ));
 
     $this->setValidators(array(
-      'skala_ppm'        => new sfValidatorPass(array('required' => false)),
-      'widmo'            => new sfValidatorPass(array('required' => false)),
-      'linia_bazowa'     => new sfValidatorPass(array('required' => false)),
-      'widmo_bazowa'     => new sfValidatorPass(array('required' => false)),
+      'sdat'             => new sfValidatorPass(array('required' => false)),
+      'spar'             => new sfValidatorPass(array('required' => false)),
       'lokalizacja_id'   => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Lokalizacja'), 'column' => 'id')),
       'rozmiar_voxela_x' => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
       'rozmiar_voxela_y' => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
       'rozmiar_voxela_z' => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
-      'stezenia'         => new sfValidatorPass(array('required' => false)),
       'te'               => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'tr'               => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'ns'               => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
@@ -62,15 +56,12 @@ abstract class BaseWidmoFormFilter extends BaseFormFilterDoctrine
   {
     return array(
       'id'               => 'Number',
-      'skala_ppm'        => 'Text',
-      'widmo'            => 'Text',
-      'linia_bazowa'     => 'Text',
-      'widmo_bazowa'     => 'Text',
+      'sdat'             => 'Text',
+      'spar'             => 'Text',
       'lokalizacja_id'   => 'ForeignKey',
       'rozmiar_voxela_x' => 'Number',
       'rozmiar_voxela_y' => 'Number',
       'rozmiar_voxela_z' => 'Number',
-      'stezenia'         => 'Text',
       'te'               => 'Number',
       'tr'               => 'Number',
       'ns'               => 'Number',

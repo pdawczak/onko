@@ -15,15 +15,11 @@ abstract class BaseWynikBadaniaFormFilter extends BaseFormFilterDoctrine
     $this->setWidgets(array(
       'ocena_stanu_guza' => new sfWidgetFormChoice(array('choices' => array('' => '', 'wz' => 'wz', 'pr' => 'pr', 'stg' => 'stg', 'bcg' => 'bcg'))),
       'badanie_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Badanie'), 'add_empty' => true)),
-      'sdat'             => new sfWidgetFormFilterInput(),
-      'spar'             => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
       'ocena_stanu_guza' => new sfValidatorChoice(array('required' => false, 'choices' => array('wz' => 'wz', 'pr' => 'pr', 'stg' => 'stg', 'bcg' => 'bcg'))),
       'badanie_id'       => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Badanie'), 'column' => 'id')),
-      'sdat'             => new sfValidatorPass(array('required' => false)),
-      'spar'             => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('wynik_badania_filters[%s]');
@@ -46,8 +42,6 @@ abstract class BaseWynikBadaniaFormFilter extends BaseFormFilterDoctrine
       'id'               => 'Number',
       'ocena_stanu_guza' => 'Enum',
       'badanie_id'       => 'ForeignKey',
-      'sdat'             => 'Text',
-      'spar'             => 'Text',
     );
   }
 }

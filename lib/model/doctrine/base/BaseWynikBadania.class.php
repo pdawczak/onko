@@ -7,21 +7,15 @@
  * 
  * @property enum $ocena_stanu_guza
  * @property integer $badanie_id
- * @property blob $sdat
- * @property clob $spar
  * @property Badanie $Badanie
  * @property Doctrine_Collection $Widma
  * 
  * @method enum                getOcenaStanuGuza()   Returns the current record's "ocena_stanu_guza" value
  * @method integer             getBadanieId()        Returns the current record's "badanie_id" value
- * @method blob                getSdat()             Returns the current record's "sdat" value
- * @method clob                getSpar()             Returns the current record's "spar" value
  * @method Badanie             getBadanie()          Returns the current record's "Badanie" value
  * @method Doctrine_Collection getWidma()            Returns the current record's "Widma" collection
  * @method WynikBadania        setOcenaStanuGuza()   Sets the current record's "ocena_stanu_guza" value
  * @method WynikBadania        setBadanieId()        Sets the current record's "badanie_id" value
- * @method WynikBadania        setSdat()             Sets the current record's "sdat" value
- * @method WynikBadania        setSpar()             Sets the current record's "spar" value
  * @method WynikBadania        setBadanie()          Sets the current record's "Badanie" value
  * @method WynikBadania        setWidma()            Sets the current record's "Widma" collection
  * 
@@ -48,12 +42,6 @@ abstract class BaseWynikBadania extends sfDoctrineRecord
         $this->hasColumn('badanie_id', 'integer', 8, array(
              'type' => 'integer',
              'length' => 8,
-             ));
-        $this->hasColumn('sdat', 'blob', null, array(
-             'type' => 'blob',
-             ));
-        $this->hasColumn('spar', 'clob', null, array(
-             'type' => 'clob',
              ));
     }
 
