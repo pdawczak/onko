@@ -218,7 +218,8 @@
         {
           xtype       : 'datefield',
           fieldLabel  : 'Data zaprzestania',
-          name        : 'badanie[Alkohol][Cechy][data_zaprzestania][wartosc]'
+          name        : 'badanie[Alkohol][Cechy][data_zaprzestania][wartosc]',
+          allowBlank  : true
         },
         {
           xtype       : 'hidden',
@@ -271,7 +272,8 @@
           {
             xtype       : 'datefield',
             fieldLabel  : 'Data zaprzestania',
-            name        : 'badanie[Inne-' + i +'][Cechy][data_zaprzestania][wartosc]'
+            name        : 'badanie[Inne-' + i +'][Cechy][data_zaprzestania][wartosc]',
+            allowBlank  : true
           },
           {
             xtype       : 'hidden',
