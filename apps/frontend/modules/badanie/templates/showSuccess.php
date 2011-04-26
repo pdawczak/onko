@@ -16,10 +16,10 @@
 .my-link:hover {
   text-decoration: none;
 }
-.result-item-date,
+/*.result-item-date,
 .result-item-result {
   font-size: 120%;
-}
+}*/
 </style>
 
 
@@ -44,27 +44,38 @@ Ext.onReady(function(){
           iconCls   : 'icon-add',
 	        menu      : [
             {
-              text      : 'Wynik badania',
-              iconCls   : 'icon-book',
-	      <?php if ($badanie->getHasWynikBadania()) :  ?>
-              disabled  : true,
-	      <?php endif ?>
-              handler   : function(){
-	        window.location = '<?php echo url_for('badanie_dodaj_wynik_badania', $badanie) ?>';
-	      }
-            },
-            {
               text      : 'Dietę',
               iconCls   : 'icon-book',
-	      <?php if ($badanie->getHasDieta()) :  ?>
+      	      <?php if ($badanie->getHasDieta()) :  ?>
               disabled  : true,
-	      <?php endif ?>
+	            <?php endif ?>
               handler   : function(){
-	        window.location = '<?php echo url_for('badanie_dodaj_diete', $badanie) ?>';
-	      }
-	    }
+      	        window.location = '<?php echo url_for('badanie_dodaj_diete', $badanie) ?>';
+	            }
+	          },
+            '-',
+            {
+              text      : 'Wynik badania',
+              iconCls   : 'icon-book',
+      	      <?php if ($badanie->getHasWynikBadania()) :  ?>
+              disabled  : true,
+	            <?php endif ?>
+              handler   : function(){
+	                 window.location = '<?php echo url_for('badanie_dodaj_wynik_badania', $badanie) ?>';
+	            }
+            },
+            {
+              text      : 'Widmo',
+              iconCls   : 'icon-book',
+      	      <?php if (! $badanie->getHasWynikBadania()) :  ?>
+              disabled  : true,
+	            <?php endif ?>
+              handler   : function(){
+	                 window.location = '<?php echo url_for('dodaj_widmo', $badanie->getWynikBadania()) ?>';
+	            }
+            }
           ]
-	},
+	      },
         '->',
         {
           text      : 'Powrót',
@@ -98,6 +109,13 @@ Ext.onReady(function(){
               layout    : 'fit',
               html      : '<?php echo myGetPartial('dieta_details', array('badanie' => $badanie)) ?>',
               iconCls   : 'icon-book'
+            },
+            {
+              xtype     : 'panel',
+              title     : 'Widma',
+              layout    : 'fit',
+              html      : '<?php echo myGetPartial('widma', array('wynik' => $badanie->getWynikBadania())) ?>',
+              iconCls   : 'icon-chart_line'
             }
           ]
         },

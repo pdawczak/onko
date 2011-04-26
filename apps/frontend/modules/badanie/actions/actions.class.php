@@ -200,5 +200,24 @@ class badanieActions extends sfActions
       }
     }
   }
+  
+  public function executeDodaj_widmo(sfWebRequest $request)
+  {
+    $this->wynik = $this->getRoute()->getObject();
 
+    $widmo = new Widmo();
+    $widmo->setWynikBadania($this->wynik);
+
+    $this->form = new WidmoForm($widmo);
+ 
+    if ($request->getMethod() == sfRequest::POST)
+    {
+      $this->form->bind($request->getPostParameter($this->form->getName()), $request->getFiles($this->form->getName()));
+      if ($this->form->isValid())
+      {
+        $this->form->save();
+        $this->redirect('badanie_szczegoly', $this->wynik->getBadanie());
+      }
+    }
+  }
 }
