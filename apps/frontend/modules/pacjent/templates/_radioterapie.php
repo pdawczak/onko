@@ -10,10 +10,10 @@
       </div>
       <div class="result-item-result">
         <ul>
-	  <?php if ($rodzaj = $radioterapia->getRodzajRadioterapii()->getNazwa()) : ?>
+	  <?php if ($radioterapia->getRodzajRadioterapii()->getNazwa()): ?>
 	  <li>
 	    Rodzaj:
-	    <?php echo $rodzaj ?>
+	    <?php echo $radioterapia->getRodzajRadioterapii() ?>
 	  </li>
 	  <?php endif ?>
           <li>
